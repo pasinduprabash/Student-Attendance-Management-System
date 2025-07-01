@@ -1,4 +1,4 @@
-package edu.ijse.layered.fx.view;
+package edu.ijse.layered.fx.controller;
 
 public class ManageStudentsController {
 

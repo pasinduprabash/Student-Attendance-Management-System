@@ -17,13 +17,15 @@ public class ServiceFactory {
         switch (type) {
             case STUDENT:
                 return null;
+            case LECTURE:
+                return null;
             default:
                 throw new AssertionError();
         }
     }
 
     public enum ServiceTypes{
-        STUDENT
+        STUDENT,LECTURE;
     }
 }
 
