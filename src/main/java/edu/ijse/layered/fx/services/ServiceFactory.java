@@ -1,5 +1,7 @@
 package edu.ijse.layered.fx.services;
 
+import edu.ijse.layered.fx.services.custom.impl.StudentServiceImpl;
+
 public class ServiceFactory {
     private static ServiceFactory serviceFactory;
 
@@ -16,7 +18,7 @@ public class ServiceFactory {
     public SuperService getService(ServiceTypes type){
         switch (type) {
             case STUDENT:
-                return null;
+                return new StudentServiceImpl();
             case LECTURE:
                 return null;
             default:

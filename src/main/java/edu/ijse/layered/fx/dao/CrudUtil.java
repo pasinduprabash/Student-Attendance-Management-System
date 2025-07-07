@@ -13,7 +13,7 @@ public class CrudUtil {
         PreparedStatement st = conn.prepareStatement(sql);
 
         if (args != null) {
-            for (int i = 0; i <= args.length; i++) {
+            for (int i = 0; i < args.length; i++) {
                 st.setObject((i + 1), args[i]);
             }
         }

@@ -15,12 +15,12 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="saveBtn" layoutX="508.0" layoutY="152.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="89.0" text="Save">
+      <Button fx:id="saveBtn" layoutX="508.0" layoutY="152.0" mnemonicParsing="false" onAction="#saveStudents" prefHeight="29.0" prefWidth="89.0" text="Save">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="updateBtn" layoutX="508.0" layoutY="193.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="89.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="508.0" layoutY="193.0" mnemonicParsing="false" onAction="#updateStudents" prefHeight="29.0" prefWidth="89.0" text="Update">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
