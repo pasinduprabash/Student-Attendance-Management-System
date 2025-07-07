@@ -3,7 +3,9 @@ module edu.ijse.layered.fx {
     requires javafx.fxml;
     requires java.sql;
 
+    exports edu.ijse.layered.fx;
 
     opens edu.ijse.layered.fx to javafx.fxml;
-    exports edu.ijse.layered.fx;
+    opens edu.ijse.layered.fx.view to javafx.fxml;
+    exports edu.ijse.layered.fx.view;
 }
