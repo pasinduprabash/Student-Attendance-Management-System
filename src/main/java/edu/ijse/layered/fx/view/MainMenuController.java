@@ -58,4 +58,14 @@ public class MainMenuController {
         stage.setResizable(false);
         stage.show();
     }
+
+    public void navigateAttendence(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageAttendance.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Attendance Management");
+        stage.setResizable(false);
+        stage.show();
+    }
 }

@@ -9,48 +9,53 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.MainMenuController">
+<AnchorPane prefHeight="468.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.MainMenuController">
     <children>
         <VBox prefHeight="400.0" prefWidth="290.0">
             <children>
-                <ImageView fitHeight="402.0" fitWidth="315.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="469.0" fitWidth="376.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@image.jpg" />
                     </image>
                 </ImageView>
             </children>
         </VBox>
-        <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="26.0" prefHeight="40.0" prefWidth="239.0" text="Main Menu">
+        <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="362.0" layoutY="26.0" prefHeight="40.0" prefWidth="296.0" text="Main Menu">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Hyperlink fx:id="tradeMarkLabel" layoutX="321.0" layoutY="357.0" prefHeight="24.0" prefWidth="272.0" text="© 2025 Sample IT System. All rights reserved.">
+        <Hyperlink fx:id="tradeMarkLabel" layoutX="375.0" layoutY="419.0" prefHeight="24.0" prefWidth="272.0" text="© 2025 Sample IT System. All rights reserved.">
             <font>
                 <Font size="12.0" />
             </font>
         </Hyperlink>
-      <Button fx:id="studentSBtn" layoutX="339.0" layoutY="84.0" mnemonicParsing="false" onAction="#navigateStudents" prefHeight="34.0" prefWidth="233.0" text="Manage Students">
+      <Button fx:id="studentsBtn" layoutX="393.0" layoutY="88.0" mnemonicParsing="false" onAction="#navigateStudents" prefHeight="34.0" prefWidth="233.0" text="Manage Students">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="lecturesBtn" layoutX="339.0" layoutY="132.0" mnemonicParsing="false" onAction="#navigateLectures" prefHeight="34.0" prefWidth="233.0" text="Manage Lectures">
+      <Button fx:id="lecturesBtn" layoutX="393.0" layoutY="136.0" mnemonicParsing="false" onAction="#navigateLectures" prefHeight="34.0" prefWidth="233.0" text="Manage Lectures">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="coursesBtn" layoutX="339.0" layoutY="182.0" mnemonicParsing="false" onAction="#navigateCourses" prefHeight="34.0" prefWidth="233.0" text="Manage Courses">
+      <Button fx:id="coursesBtn" layoutX="393.0" layoutY="186.0" mnemonicParsing="false" onAction="#navigateCourses" prefHeight="34.0" prefWidth="233.0" text="Manage Courses">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="classesBtn" layoutX="339.0" layoutY="235.0" mnemonicParsing="false" onAction="#navigateClasses" prefHeight="34.0" prefWidth="233.0" text="Manage Classes">
+      <Button fx:id="classesBtn" layoutX="393.0" layoutY="239.0" mnemonicParsing="false" onAction="#navigateClasses" prefHeight="34.0" prefWidth="233.0" text="Manage Classes">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="logOutBtn" layoutX="339.0" layoutY="287.0" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="233.0" text="Log Out">
+      <Button fx:id="logOutBtn" layoutX="393.0" layoutY="347.0" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="233.0" text="Log Out">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="attendenceBtn" layoutX="393.0" layoutY="292.0" mnemonicParsing="false" onAction="#navigateAttendence" prefHeight="34.0" prefWidth="233.0" text="Manage Attendance">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
