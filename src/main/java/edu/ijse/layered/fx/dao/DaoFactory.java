@@ -1,5 +1,6 @@
 package edu.ijse.layered.fx.dao;
 
+import edu.ijse.layered.fx.dao.custom.impl.ClassesDaoImpl;
 import edu.ijse.layered.fx.dao.custom.impl.CourseDaoImpl;
 import edu.ijse.layered.fx.dao.custom.impl.LectureDaoImpl;
 import edu.ijse.layered.fx.dao.custom.impl.StudentDaoImpl;
@@ -25,13 +26,15 @@ public class DaoFactory {
                 return new LectureDaoImpl();
             case COURSE:
                 return new CourseDaoImpl();
+            case CLASSES:
+                return new ClassesDaoImpl();
             default:
                 return null;
         }
     }
 
     public enum DaoTypes{
-        STUDENT,LECTURE,COURSE;
+        STUDENT,LECTURE,COURSE,CLASSES;
     }
 
 }

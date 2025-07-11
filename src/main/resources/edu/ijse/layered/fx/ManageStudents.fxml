@@ -30,7 +30,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="resetBtn" layoutX="618.0" layoutY="236.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="89.0" text="Reset">
+      <Button fx:id="resetBtn" layoutX="618.0" layoutY="236.0" mnemonicParsing="false" onAction="#clear" prefHeight="29.0" prefWidth="89.0" text="Reset">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

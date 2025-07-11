@@ -51,12 +51,12 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="saveBtn" layoutX="568.0" layoutY="167.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="129.0" text="Save">
+      <Button fx:id="saveBtn" layoutX="568.0" layoutY="167.0" mnemonicParsing="false" onAction="#saveLecture" prefHeight="38.0" prefWidth="129.0" text="Save">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="updateBtn" layoutX="568.0" layoutY="216.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="129.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="568.0" layoutY="216.0" mnemonicParsing="false" onAction="#updateLecture" prefHeight="38.0" prefWidth="129.0" text="Update">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -66,7 +66,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="resetBtn" layoutX="718.0" layoutY="265.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="129.0" text="Reset">
+      <Button fx:id="resetBtn" layoutX="718.0" layoutY="265.0" mnemonicParsing="false" onAction="#clear" prefHeight="38.0" prefWidth="129.0" text="Reset">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

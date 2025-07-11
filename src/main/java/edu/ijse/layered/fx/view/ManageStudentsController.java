@@ -96,6 +96,7 @@ public class ManageStudentsController {
             );
 
             String rsp = studentsController.updateStudents(studentDto);
+            clear();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();

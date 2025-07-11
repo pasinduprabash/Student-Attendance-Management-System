@@ -31,22 +31,22 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="212.0" layoutY="93.0" prefHeight="30.0" prefWidth="282.0">
+      <TextField fx:id="idTxt" layoutX="212.0" layoutY="93.0" prefHeight="30.0" prefWidth="282.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField layoutX="212.0" layoutY="144.0" prefHeight="30.0" prefWidth="282.0">
+      <TextField fx:id="nameTxt" layoutX="212.0" layoutY="144.0" prefHeight="30.0" prefWidth="282.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextArea layoutX="212.0" layoutY="194.0" prefHeight="54.0" prefWidth="282.0" />
-      <Button fx:id="saveBtn" layoutX="538.0" layoutY="120.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Save">
+      <TextArea fx:id="subjectsTxt" layoutX="212.0" layoutY="194.0" prefHeight="54.0" prefWidth="282.0" />
+      <Button fx:id="saveBtn" layoutX="538.0" layoutY="120.0" mnemonicParsing="false" onAction="#saveCourse" prefHeight="31.0" prefWidth="111.0" text="Save">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="updateBtn" layoutX="538.0" layoutY="167.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="538.0" layoutY="167.0" mnemonicParsing="false" onAction="#updateCourse" prefHeight="31.0" prefWidth="111.0" text="Update">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
@@ -54,7 +54,7 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="resetBtn" layoutX="676.0" layoutY="214.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Reset">
+      <Button fx:id="resetBtn" layoutX="676.0" layoutY="214.0" mnemonicParsing="false" onAction="#clear" prefHeight="31.0" prefWidth="111.0" text="Reset">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>

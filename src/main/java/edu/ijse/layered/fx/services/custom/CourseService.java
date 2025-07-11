@@ -1,0 +1,10 @@
+package edu.ijse.layered.fx.services.custom;
+
+import edu.ijse.layered.fx.dto.CourseDto;
+import edu.ijse.layered.fx.services.SuperService;
+
+public interface CourseService extends SuperService {
+
+    public String addCourse(CourseDto courseDto) throws Exception;
+    public String updateCourse(CourseDto courseDto) throws Exception;
+}

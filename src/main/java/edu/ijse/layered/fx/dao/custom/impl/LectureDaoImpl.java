@@ -10,7 +10,7 @@ public class LectureDaoImpl implements LectureDao {
 
     @Override
     public boolean save(LectureEntity t) throws Exception {
-        return CrudUtil.executeUpdate("INSERT INTO Lecture VALUES(?,?,?,?)",
+        return CrudUtil.executeUpdate("INSERT INTO lecture VALUES(?,?,?,?)",
                 t.getLecture_id(),
                 t.getName(),
                 t.getContact_number(),
@@ -19,7 +19,7 @@ public class LectureDaoImpl implements LectureDao {
 
     @Override
     public boolean update(LectureEntity t) throws Exception {
-        return CrudUtil.executeUpdate("UPDATE Lecture SET name = ?, contact_number = ?, assigned_subject = ? WHERE lecture_id = ?",
+        return CrudUtil.executeUpdate("UPDATE lecture SET name = ?, contact_no = ?, assigned_sub = ? WHERE lecture_id = ?",
                 t.getName(),
                 t.getContact_number(),
                 t.getAssigned_subjects(),
