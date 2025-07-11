@@ -7,4 +7,5 @@ public interface CourseService extends SuperService {
 
     public String addCourse(CourseDto courseDto) throws Exception;
     public String updateCourse(CourseDto courseDto) throws Exception;
+    public String deleteCourse(String id) throws Exception;
 }

@@ -15,4 +15,8 @@ public class StudentsController {
     public String updateStudents(StudentDto studentDto) throws Exception{
         return studentService.updateStudent(studentDto);
     }
+
+    public String deleteStudent(String id) throws Exception{
+        return studentService.deleteStudent(id);
+    }
 }

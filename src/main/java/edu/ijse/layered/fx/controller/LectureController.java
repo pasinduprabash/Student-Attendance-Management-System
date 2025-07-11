@@ -15,5 +15,9 @@ public class LectureController {
         public String updateLecture(LecturerDto lecturerDto) throws Exception {
             return lectureService.updateLecture(lecturerDto);
         }
+
+        public String deleteLecture(String id) throws Exception{
+            return lectureService.deleteLecture(id);
+        }
 }
 

@@ -107,6 +107,20 @@ public class ManageStudentsController {
         }
     }
 
+    public void deleteStudents(ActionEvent event) {
+        try {
+            String rsp = studentsController.deleteStudent(idTxt.getText());
+            clear();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
     public void clear(){
         idTxt.setText("");
         nameTxt.setText("");

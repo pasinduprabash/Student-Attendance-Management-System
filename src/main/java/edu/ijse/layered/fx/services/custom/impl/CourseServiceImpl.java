@@ -33,4 +33,9 @@ public class CourseServiceImpl implements CourseService {
 
         return courseDao.update(courseEntity) ? "Course Updated Successfully" : "Course Updated Failed";
     }
+
+    @Override
+    public String deleteCourse(String id) throws Exception {
+        return courseDao.delete(id) ? "Course Deleted Successfully" : "Course Deleted Failed";
+    }
 }

@@ -27,8 +27,8 @@ public class LectureDaoImpl implements LectureDao {
     }
 
     @Override
-    public boolean delete(String s) throws Exception {
-        return false;
+    public boolean delete(String id) throws Exception {
+        return CrudUtil.executeUpdate("DELETE FROM lecture WHERE lecture_id = ?",id);
     }
 
     @Override

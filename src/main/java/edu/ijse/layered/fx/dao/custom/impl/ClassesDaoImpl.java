@@ -20,7 +20,7 @@ public class ClassesDaoImpl implements ClassesDao {
 
     @Override
     public boolean update(ClassesEntity t) throws Exception {
-        return CrudUtil.executeUpdate("UPDATE FROM class SET course_name = ? , subject_name = ? , lecture_name = ? , lecture_date = ? WHERE class_id = ?",
+        return CrudUtil.executeUpdate("UPDATE class SET course_name = ? , subject_name = ? , lecture_name = ? , lecture_date = ? WHERE class_id = ?",
                 t.getCourse_name(),
                 t.getSubject_name(),
                 t.getLecture_name(),
@@ -29,8 +29,8 @@ public class ClassesDaoImpl implements ClassesDao {
     }
 
     @Override
-    public boolean delete(String s) throws Exception {
-        return false;
+    public boolean delete(String id) throws Exception {
+        return CrudUtil.executeUpdate("DELETE FROM class WHERE class_id = ?",id);
     }
 
     @Override

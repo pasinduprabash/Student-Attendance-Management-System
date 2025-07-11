@@ -91,6 +91,37 @@ public class ManageClassesController {
 
     @FXML
     void updateClasses(ActionEvent event) {
-        // TODO: Implement update logic if needed
+        try{
+            ClassesDto classesDto = new ClassesDto(
+                    idTxt.getText(),
+                    courseTxt.getText(),
+                    subjectTxt.getText(),
+                    lectureTxt.getText(),
+                    dateTxt.getValue()
+            );
+            String rsp = classesController.updateClasses(classesDto);
+            clear(event);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    public void deleteClasses(ActionEvent event) {
+        try {
+            String rsp = classesController.deleteClasses(idTxt.getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
     }
 }

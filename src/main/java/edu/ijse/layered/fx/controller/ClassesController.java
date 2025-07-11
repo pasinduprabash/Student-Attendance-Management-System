@@ -15,4 +15,8 @@ public class ClassesController {
     public String updateClasses(ClassesDto classesDto) throws Exception{
         return classesService.updateClasses(classesDto);
     }
+
+    public String deleteClasses(String id) throws Exception{
+        return classesService.deleteClasses(id);
+    }
 }

@@ -7,4 +7,5 @@ public interface LectureService extends SuperService {
 
     public String addLecture(LecturerDto lecturerDto) throws Exception;
     public String updateLecture(LecturerDto lecturerDto) throws Exception;
+    public String deleteLecture(String id) throws Exception;
 }

@@ -36,4 +36,9 @@ public class ClassesServiceImpl implements ClassesService {
 
         return classesDao.update(classesEntity) ? "Class Schedule Updated" : "Class Schedule Updated Failed";
     }
+
+    @Override
+    public String deleteClasses(String id) throws Exception {
+        return classesDao.delete(id) ? "Class Deleted" : "Class Deleted Failed";
+    }
 }

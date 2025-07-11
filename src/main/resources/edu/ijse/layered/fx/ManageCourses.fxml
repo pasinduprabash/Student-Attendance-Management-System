@@ -50,7 +50,7 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="deleteBtn" layoutX="538.0" layoutY="214.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Delete">
+      <Button fx:id="deleteBtn" layoutX="538.0" layoutY="214.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="31.0" prefWidth="111.0" text="Delete">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>

@@ -25,8 +25,8 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public boolean delete(String s) throws Exception {
-        return false;
+    public boolean delete(String id) throws Exception {
+        return CrudUtil.executeUpdate("DELETE FROM student WHERE reg_number = ?",id);
     }
 
     @Override

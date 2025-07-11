@@ -31,4 +31,9 @@ public class StudentServiceImpl implements StudentService {
 
         return studentDao.update(studentEntity) ? "Student Updated Successfully" : "Student Updated Failed";
     }
+
+    @Override
+    public String deleteStudent(String id) throws Exception {
+        return studentDao.delete(id) ? "Student Deleted Successfully" : "Student Deleted Failed";
+    }
 }

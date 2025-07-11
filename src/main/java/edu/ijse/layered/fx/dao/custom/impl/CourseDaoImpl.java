@@ -25,8 +25,8 @@ public class CourseDaoImpl implements CourseDao {
     }
 
     @Override
-    public boolean delete(String s) throws Exception {
-        return false;
+    public boolean delete(String id) throws Exception {
+        return CrudUtil.executeUpdate("DELETE FROM course WHERE course_id = ?",id);
     }
 
     @Override

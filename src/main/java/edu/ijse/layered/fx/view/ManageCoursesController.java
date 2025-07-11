@@ -102,4 +102,16 @@ public class ManageCoursesController {
         }
     }
 
+    public void deleteCourse(ActionEvent event) {
+        try {
+            String rsp = courseController.deleteCourse(idTxt.getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
 }

@@ -16,4 +16,8 @@ public class CourseController {
         return courseservice.updateCourse(courseDto);
     }
 
+    public String deleteCourse(String id) throws Exception{
+        return courseservice.deleteCourse(id);
+    }
+
 }

@@ -31,4 +31,9 @@ public class LectureServiceImpl implements LectureService {
 
         return lectureDao.update(lectureEntity) ? "Lecture Updated Successfully":"Lecture Updated Failed";
     }
+
+    @Override
+    public String deleteLecture(String id) throws Exception{
+        return lectureDao.delete(id) ? "Lecture Deleted Successfully" : "Lecture Deleted Failed";
+    }
 }
