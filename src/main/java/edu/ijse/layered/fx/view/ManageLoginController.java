@@ -62,18 +62,22 @@ public class ManageLoginController {
                     stage.setResizable(false);
                     stage.show();
 
+                    ((Stage) loginBtn.getScene().getWindow()).close();
+
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("Admin Login Successfully");
                     alert.showAndWait();
 
                 } else if (username.equals("lecture") && password.equals("123") && role.equals("Lecture")){
-                    FXMLLoader fxmlLoader = new FXMLLoader(ManageLoginController.class.getResource("/edu/ijse/layered/fx/MainMenu.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(ManageLoginController.class.getResource("/edu/ijse/layered/fx/ManageAttendance.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage stage = new Stage();
                     stage.setScene(scene);
                     stage.setTitle("Main Menu");
                     stage.setResizable(false);
                     stage.show();
+
+                    ((Stage) loginBtn.getScene().getWindow()).close();
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("Lecture Login Successfully");
