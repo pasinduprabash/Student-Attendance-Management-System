@@ -1,29 +1,26 @@
 package edu.ijse.layered.fx.dto;
 
 public class LecturerDto {
+    public String lectureId;
+    public String name;
+    public String contactDetails;
 
-    private String lecture_id;
-    private String name;
-    private int contact_number;
-    private String assigned_subects;
-
-    public LecturerDto() {
+    public LecturerDto(){
 
     }
 
-    public LecturerDto (String lecture_id, String name, int contact_number, String assigned_subects) {
-        this.lecture_id = lecture_id;
+    public LecturerDto(String lectureId, String name, String contactDetails) {
+        this.lectureId = lectureId;
         this.name = name;
-        this.contact_number = contact_number;
-        this.assigned_subects = assigned_subects;
+        this.contactDetails = contactDetails;
     }
 
-    public String getLecture_id() {
-        return lecture_id;
+    public String getLectureId() {
+        return lectureId;
     }
 
-    public void setLecture_id(String lecture_id) {
-        this.lecture_id = lecture_id;
+    public void setLectureId(String lectureId) {
+        this.lectureId = lectureId;
     }
 
     public String getName() {
@@ -34,29 +31,21 @@ public class LecturerDto {
         this.name = name;
     }
 
-    public int getContact_number() {
-        return contact_number;
+    public String getContactDetails() {
+        return contactDetails;
     }
 
-    public void setContact_number(int contact_number) {
-        this.contact_number = contact_number;
-    }
-
-    public String getAssigned_subects() {
-        return assigned_subects;
-    }
-
-    public void setAssigned_subects(String assigned_subects) {
-        this.assigned_subects = assigned_subects;
+    public void setContactDetails(String contactDetails) {
+        this.contactDetails = contactDetails;
     }
 
     @Override
     public String toString() {
-        return "LecturerDto{" +
-                "lecture_id='" + lecture_id + '\'' +
+        return "LectureDto{" +
+                "lectureId='" + lectureId + '\'' +
                 ", name='" + name + '\'' +
-                ", contact_number=" + contact_number +
-                ", assigned_subects='" + assigned_subects + '\'' +
+                ", contactDetails='" + contactDetails + '\'' +
                 '}';
     }
 }
+

@@ -4,48 +4,65 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="612.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageAttendanceController">
-    <Label fx:id="classLabel" layoutX="47.0" layoutY="119.0" prefHeight="36.0" prefWidth="86.0" text="Class :">
-      <font>
-         <Font name="System Bold" size="16.0" />
-      </font></Label>
+<AnchorPane prefHeight="443.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageAttendanceController">
 
-    <DatePicker fx:id="datePicker" layoutX="414.0" layoutY="118.0" prefHeight="36.0" prefWidth="225.0" />
-
-    <Button fx:id="loadBtn" layoutX="683.0" layoutY="118.0" onAction="#loadStudents" prefHeight="36.0" prefWidth="174.0" text="Load Students">
+    <!-- Submit Button -->
+    <Button fx:id="submitBtn" layoutX="270.0" layoutY="366.0" onAction="#submitAttendance" prefHeight="36.0" prefWidth="145.0" text="Reset">
       <font>
          <Font name="System Bold" size="13.0" />
       </font></Button>
-
-    <!-- Table -->
-    <TableView fx:id="tblAttendance" layoutX="38.0" layoutY="184.0" prefHeight="335.0" prefWidth="876.0">
-        <columns>
-            <TableColumn fx:id="colRegNo" prefWidth="204.0" text="Reg No" />
-            <TableColumn fx:id="colName" prefWidth="428.0" text="Name" />
-            <TableColumn fx:id="colPresent" prefWidth="243.0" text="Present" />
-        </columns>
-    </TableView>
-
-    <!-- Submit Button -->
-    <Button fx:id="submitBtn" layoutX="726.0" layoutY="544.0" onAction="#submitAttendance" prefHeight="36.0" prefWidth="190.0" text="Submit Attendance">
-      <font>
-         <Font name="System Bold" size="14.0" />
-      </font></Button>
-   <Label fx:id="dateLabel" layoutX="341.0" layoutY="119.0" prefHeight="36.0" prefWidth="86.0" text="Date :">
-      <font>
-         <Font name="System Bold" size="16.0" />
-      </font>
-   </Label>
-   <Label fx:id="attendanceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="28.0" prefHeight="50.0" prefWidth="956.0" text="Attendance Management" textAlignment="CENTER">
+   <Label fx:id="attendanceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="15.0" prefHeight="50.0" prefWidth="475.0" text="Attendance Management" textAlignment="CENTER">
       <font>
          <Font name="System Bold" size="20.0" />
       </font>
    </Label>
-   <ChoiceBox fx:id="classPicker" layoutX="115.0" layoutY="118.0" prefHeight="36.0" prefWidth="205.0" />
+   <Label fx:id="classLabel1" layoutX="48.0" layoutY="84.0" prefHeight="36.0" prefWidth="145.0" text="Course ID :">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+   <TextField layoutX="193.0" layoutY="84.0" prefHeight="36.0" prefWidth="239.0">
+      <font>
+         <Font size="15.0" />
+      </font></TextField>
+   <Label fx:id="classLabel11" layoutX="48.0" layoutY="136.0" prefHeight="36.0" prefWidth="145.0" text="Class ID :">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+   <TextField layoutX="193.0" layoutY="136.0" prefHeight="36.0" prefWidth="239.0">
+      <font>
+         <Font size="15.0" />
+      </font></TextField>
+   <Label fx:id="classLabel2" layoutX="48.0" layoutY="193.0" prefHeight="36.0" prefWidth="145.0" text="Students ID :">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+   <Label fx:id="classLabel21" layoutX="48.0" layoutY="245.0" prefHeight="36.0" prefWidth="145.0" text="Date :">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+   <Label fx:id="classLabel211" layoutX="48.0" layoutY="297.0" prefHeight="36.0" prefWidth="145.0" text="Status :">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+   <TextField layoutX="193.0" layoutY="193.0" prefHeight="36.0" prefWidth="239.0">
+      <font>
+         <Font size="15.0" />
+      </font></TextField>
+   <DatePicker layoutX="193.0" layoutY="245.0" prefHeight="36.0" prefWidth="239.0" />
+   <ChoiceBox layoutX="193.0" layoutY="297.0" prefHeight="36.0" prefWidth="239.0" />
+   <Button fx:id="submitBtn1" layoutX="57.0" layoutY="366.0" onAction="#submitAttendance" prefHeight="36.0" prefWidth="190.0" text="Submit Attendance">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font>
+   </Button>
 
 </AnchorPane>

@@ -1,29 +1,25 @@
 package edu.ijse.layered.fx.entity;
 
 public class StudentEntity {
-
-    private int reg_number;
+    private int regNum;
     private String name;
-    private String course;
-    private int contact_number;
+    private String contactDetails;
 
-    public StudentEntity(){
-
+    public StudentEntity() {
     }
 
-    public StudentEntity (int reg_number,String name,String course, int contact_number){
-        this.reg_number = reg_number;
+    public StudentEntity(int regNum, String name, String contactDetails) {
+        this.regNum = regNum;
         this.name = name;
-        this.contact_number = contact_number;
-        this.course = course;
+        this.contactDetails = contactDetails;
     }
 
-    public int getReg_number() {
-        return reg_number;
+    public int getRegNum() {
+        return regNum;
     }
 
-    public void setReg_number(int reg_number) {
-        this.reg_number = reg_number;
+    public void setRegNum(int regNum) {
+        this.regNum = regNum;
     }
 
     public String getName() {
@@ -34,29 +30,20 @@ public class StudentEntity {
         this.name = name;
     }
 
-    public String getCourse() {
-        return course;
+    public String getContactDetails() {
+        return contactDetails;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
-    }
-
-    public int getContact_number() {
-        return contact_number;
-    }
-
-    public void setContact_number(int contact_number) {
-        this.contact_number = contact_number;
+    public void setContactDetails(String contactDetails) {
+        this.contactDetails = contactDetails;
     }
 
     @Override
     public String toString() {
-        return "StudentDto{" +
-                "reg_number=" + reg_number +
+        return "StudentEntity{" +
+                "regNum=" + regNum +
                 ", name='" + name + '\'' +
-                ", course='" + course + '\'' +
-                ", contact_number=" + contact_number +
+                ", contactDetails='" + contactDetails + '\'' +
                 '}';
     }
 }

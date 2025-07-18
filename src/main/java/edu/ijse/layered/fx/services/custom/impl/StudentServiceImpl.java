@@ -13,10 +13,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public String addStudent(StudentDto studentDto) throws Exception {
         StudentEntity studentEntity = new StudentEntity(
-                studentDto.getReg_number(),
+                studentDto.getRegNum(),
                 studentDto.getName(),
-                studentDto.getCourse(),
-                studentDto.getContact_number());
+                studentDto.getContactDetails());
 
         return studentDao.save(studentEntity) ? "Student Added Successfully" : "Student Added Failed";
     }
@@ -24,10 +23,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public String updateStudent(StudentDto studentDto) throws Exception {
         StudentEntity studentEntity = new StudentEntity(
-                studentDto.getReg_number(),
+                studentDto.getRegNum(),
                 studentDto.getName(),
-                studentDto.getCourse(),
-                studentDto.getContact_number());
+                studentDto.getContactDetails());
 
         return studentDao.update(studentEntity) ? "Student Updated Successfully" : "Student Updated Failed";
     }

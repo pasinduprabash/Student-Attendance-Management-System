@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 public class ManageStudentsController {
 
     private StudentsController studentsController = new StudentsController();
+
     @FXML
     private TableColumn<?, ?> colContact;
 
@@ -26,12 +27,6 @@ public class ManageStudentsController {
 
     @FXML
     private TextField contactTxt;
-
-    @FXML
-    private Label courseLabel;
-
-    @FXML
-    private TextField courseTxt;
 
     @FXML
     private Button deleteBtn;
@@ -61,19 +56,38 @@ public class ManageStudentsController {
     private Button updateBtn;
 
     @FXML
+    void clear(ActionEvent event) {
+            idTxt.setText("");
+            nameTxt.setText("");
+            contactTxt.setText("");
+    }
+
+    @FXML
+    void deleteStudents(ActionEvent event) {
+
+        try {
+            String rsp = studentsController.deleteStudent(idTxt.getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
     void saveStudents(ActionEvent event) {
 
         try {
-
             StudentDto studentDto = new StudentDto(
                     Integer.parseInt(idTxt.getText()),
                     nameTxt.getText(),
-                    courseTxt.getText(),
-                    Integer.parseInt(contactTxt.getText())
+                    contactTxt.getText()
             );
 
             String rsp = studentsController.addStudent(studentDto);
-            clear();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -87,16 +101,14 @@ public class ManageStudentsController {
 
     @FXML
     void updateStudents(ActionEvent event) {
+
         try {
             StudentDto studentDto = new StudentDto(
                     Integer.parseInt(idTxt.getText()),
-                    nameTxt.getText(),
-                    courseTxt.getText(),
-                    Integer.parseInt(contactTxt.getText())
-            );
+                            nameTxt.getText(),
+                            contactTxt.getText());
 
             String rsp = studentsController.updateStudents(studentDto);
-            clear();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -105,27 +117,6 @@ public class ManageStudentsController {
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
-    }
-
-    public void deleteStudents(ActionEvent event) {
-        try {
-            String rsp = studentsController.deleteStudent(idTxt.getText());
-            clear();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText(rsp);
-            alert.showAndWait();
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
-        }
-    }
-
-    public void clear(){
-        idTxt.setText("");
-        nameTxt.setText("");
-        courseTxt.setText("");
-        contactTxt.setText("");
     }
 
 }

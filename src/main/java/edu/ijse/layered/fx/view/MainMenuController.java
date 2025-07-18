@@ -1,5 +1,6 @@
 package edu.ijse.layered.fx.view;
 
+import edu.ijse.layered.fx.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,13 +24,22 @@ public class MainMenuController {
     private Button coursesBtn;
 
     @FXML
+    private Button enrollBtn;
+
+    @FXML
     private Button lecturesBtn;
 
     @FXML
     private Button logOutBtn;
 
     @FXML
+    private Button reportsBtn;
+
+    @FXML
     private Button studentsBtn;
+
+    @FXML
+    private Button subjectsBtn;
 
     @FXML
     private Label titleLabel;
@@ -37,57 +47,8 @@ public class MainMenuController {
     @FXML
     private Hyperlink tradeMarkLabel;
 
-    public void navigateStudents(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageStudents.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Students Management System");
-        stage.setResizable(false);
-        stage.show();
-    }
-
-    public void navigateLectures(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageLectures.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Lecture Management System");
-        stage.setResizable(false);
-        stage.show();
-    }
-
-    public void navigateCourses(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageCourses.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Course Management System");
-        stage.setResizable(false);
-        stage.show();
-    }
-
-    public void navigateClasses(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageClasses.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Classes Management System");
-        stage.setResizable(false);
-        stage.show();
-    }
-
-    public void navigateAttendence(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageAttendance.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Attendance Management");
-        stage.setResizable(false);
-        stage.show();
-    }
-
-    public void logOut(ActionEvent actionEvent) throws IOException {
+    @FXML
+    void logOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageLogin.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
@@ -97,6 +58,76 @@ public class MainMenuController {
         stage.show();
 
         ((Stage) logOutBtn.getScene().getWindow()).close();
+    }
+
+    @FXML
+    void navigateAttendence(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageAttendance.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Attendance Management");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void navigateClasses(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageClasses.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Classes Management System");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void navigateCourses(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageCourses.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Course Management System");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void navigateEnroll(ActionEvent event) {
+
+    }
+
+    @FXML
+    void navigateLectures(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageLectures.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Lecture Management System");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void navigateReports(ActionEvent event) {
+
+    }
+
+    @FXML
+    void navigateStudents(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/ManageStudents.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Students Management System");
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void navigateSubjects(ActionEvent event) throws IOException {
+
     }
 
 }

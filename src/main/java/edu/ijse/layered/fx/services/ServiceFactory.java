@@ -1,9 +1,6 @@
 package edu.ijse.layered.fx.services;
 
-import edu.ijse.layered.fx.services.custom.impl.ClassesServiceImpl;
-import edu.ijse.layered.fx.services.custom.impl.CourseServiceImpl;
-import edu.ijse.layered.fx.services.custom.impl.LectureServiceImpl;
-import edu.ijse.layered.fx.services.custom.impl.StudentServiceImpl;
+import edu.ijse.layered.fx.services.custom.impl.*;
 
 public class ServiceFactory {
     private static ServiceFactory serviceFactory;
@@ -23,18 +20,20 @@ public class ServiceFactory {
             case STUDENT:
                 return new StudentServiceImpl();
             case LECTURE:
-                return new LectureServiceImpl();
+                return new LecturerServiceImpl();
             case COURSE:
                 return new CourseServiceImpl();
             case CLASSES:
-                return new ClassesServiceImpl();
+                return new ClassServiceImpl();
+            case SUBJECT:
+                return new SubjectServiceImpl();
             default:
                 throw new AssertionError();
         }
     }
 
     public enum ServiceTypes{
-        STUDENT,LECTURE,COURSE,CLASSES;
+        STUDENT,LECTURE,COURSE,CLASSES,SUBJECT;
     }
 }
 

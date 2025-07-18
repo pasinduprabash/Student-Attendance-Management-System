@@ -1,14 +1,14 @@
 package edu.ijse.layered.fx.view;
 
-import edu.ijse.layered.fx.controller.ClassesController;
-import edu.ijse.layered.fx.dto.ClassesDto;
+import edu.ijse.layered.fx.controller.ClassController;
+import edu.ijse.layered.fx.dto.ClassDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class ManageClassesController {
 
-    private ClassesController classesController = new ClassesController();
+    private ClassController classesController = new ClassController();
 
     @FXML
     private TextField courseTxt;
@@ -58,14 +58,14 @@ public class ManageClassesController {
         courseTxt.setText("");
         subjectTxt.setText("");
         lectureTxt.setText("");
-        dateTxt.setValue(null); // Clear the DatePicker
+        dateTxt.setValue(null);
     }
 
     @FXML
     void saveClasses(ActionEvent event) {
         try {
 
-            ClassesDto classesDto = new ClassesDto(
+            ClassDto classesDto = new ClassDto(
                     idTxt.getText(),
                     courseTxt.getText(),
                     subjectTxt.getText(),
@@ -90,7 +90,7 @@ public class ManageClassesController {
     @FXML
     void updateClasses(ActionEvent event) {
         try{
-            ClassesDto classesDto = new ClassesDto(
+            ClassDto classesDto = new ClassDto(
                     idTxt.getText(),
                     courseTxt.getText(),
                     subjectTxt.getText(),

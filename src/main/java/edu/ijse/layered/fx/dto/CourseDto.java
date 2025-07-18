@@ -1,27 +1,24 @@
 package edu.ijse.layered.fx.dto;
 
 public class CourseDto {
+    public String courseId;
+    public String name;
 
-    private String course_id;
-    private String name;
-    private String subjects;
-
-    public CourseDto(){
+    public CourseDto() {
 
     }
 
-    public CourseDto(String course_id, String name, String subjects){
-        this.course_id = course_id;
+    public CourseDto(String courseId, String name) {
+        this.courseId = courseId;
         this.name = name;
-        this.subjects = subjects;
     }
 
-    public String getCourse_id() {
-        return course_id;
+    public String getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(String course_id) {
-        this.course_id = course_id;
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
     }
 
     public String getName() {
@@ -32,20 +29,12 @@ public class CourseDto {
         this.name = name;
     }
 
-    public String getSubjects() {
-        return subjects;
-    }
-
-    public void setSubjects(String subjects) {
-        this.subjects = subjects;
-    }
-
     @Override
     public String toString() {
         return "CourseDto{" +
-                "course_id='" + course_id + '\'' +
+                "courseId='" + courseId + '\'' +
                 ", name='" + name + '\'' +
-                ", subjects='" + subjects + '\'' +
                 '}';
     }
 }
+

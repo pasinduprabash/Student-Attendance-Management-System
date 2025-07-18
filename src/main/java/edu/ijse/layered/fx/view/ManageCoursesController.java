@@ -9,14 +9,12 @@ import javafx.scene.control.*;
 public class ManageCoursesController {
 
     private CourseController courseController = new CourseController();
+
     @FXML
     private TableColumn<?, ?> colId;
 
     @FXML
     private TableColumn<?, ?> colName;
-
-    @FXML
-    private TableColumn<?, ?> colSubjects;
 
     @FXML
     private Button deleteBtn;
@@ -43,19 +41,12 @@ public class ManageCoursesController {
     private Button saveBtn;
 
     @FXML
-    private Label subjectsLabel;
-
-    @FXML
-    private TextArea subjectsTxt;
-
-    @FXML
     private Button updateBtn;
 
     @FXML
     void clear(ActionEvent event) {
             idTxt.setText("");
             nameTxt.setText("");
-            subjectsTxt.setText("");
     }
 
     @FXML
@@ -64,8 +55,7 @@ public class ManageCoursesController {
         try {
             CourseDto courseDto = new CourseDto(
                     idTxt.getText(),
-                    nameTxt.getText(),
-                    subjectsTxt.getText()
+                    nameTxt.getText()
             );
 
             String rsp = courseController.addCourse(courseDto);
@@ -86,8 +76,7 @@ public class ManageCoursesController {
         try {
             CourseDto courseDto = new CourseDto(
               idTxt.getText(),
-              nameTxt.getText(),
-              subjectsTxt.getText()
+              nameTxt.getText()
             );
 
             String rsp = courseController.updateCourse(courseDto);

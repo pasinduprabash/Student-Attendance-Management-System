@@ -11,17 +11,15 @@ public class CourseDaoImpl implements CourseDao {
     @Override
     public boolean save(CourseEntity t) throws Exception{
         return CrudUtil.executeUpdate("INSERT INTO course VALUES(?,?,?)",
-                t.getCourse_id(),
-                t.getName(),
-                t.getSubects());
+                t.getCourseId(),
+                t.getName());
     }
 
     @Override
     public boolean update(CourseEntity t) throws Exception{
-        return CrudUtil.executeUpdate("UPDATE course SET name = ?, subjects = ? WHERE course_id = ?",
+        return CrudUtil.executeUpdate("UPDATE course SET name = ? WHERE course_id = ?",
                 t.getName(),
-                t.getSubects(),
-                t.getCourse_id());
+                t.getCourseId());
     }
 
     @Override

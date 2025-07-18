@@ -21,17 +21,17 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="nameLabel" layoutX="495.0" layoutY="80.0" prefHeight="43.0" prefWidth="213.0" text="Course Name :">
+      <Label fx:id="nameLabel" layoutX="495.0" layoutY="80.0" prefHeight="43.0" prefWidth="213.0" text="Course ID :">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="subLabel" layoutX="48.0" layoutY="138.0" prefHeight="43.0" prefWidth="213.0" text="Subject Name :">
+      <Label fx:id="subLabel" layoutX="48.0" layoutY="138.0" prefHeight="43.0" prefWidth="213.0" text="Subject ID :">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="lecLabel" layoutX="48.0" layoutY="196.0" prefHeight="43.0" prefWidth="213.0" text="Lecture Name :">
+      <Label fx:id="lecLabel" layoutX="495.0" layoutY="138.0" prefHeight="43.0" prefWidth="213.0" text="Lecture ID :">
          <font>
             <Font size="15.0" />
          </font>
@@ -51,44 +51,45 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="lectureTxt" layoutX="190.0" layoutY="199.0" prefHeight="36.0" prefWidth="250.0">
+      <TextField fx:id="lectureTxt" layoutX="641.0" layoutY="142.0" prefHeight="36.0" prefWidth="250.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="saveBtn" layoutX="495.0" layoutY="200.0" mnemonicParsing="false" onAction="#saveClasses" prefHeight="36.0" prefWidth="123.0" text="Save">
+      <Button fx:id="saveBtn" layoutX="205.0" layoutY="267.0" mnemonicParsing="false" onAction="#saveClasses" prefHeight="36.0" prefWidth="123.0" text="Save">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="updateBtn" layoutX="641.0" layoutY="200.0" mnemonicParsing="false" onAction="#updateClasses" prefHeight="36.0" prefWidth="123.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="356.0" layoutY="267.0" mnemonicParsing="false" onAction="#updateClasses" prefHeight="36.0" prefWidth="123.0" text="Update">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="deleteBtn" layoutX="787.0" layoutY="200.0" mnemonicParsing="false" onAction="#deleteClasses" prefHeight="36.0" prefWidth="123.0" text="Delete">
+      <Button fx:id="deleteBtn" layoutX="511.0" layoutY="267.0" mnemonicParsing="false" onAction="#deleteClasses" prefHeight="36.0" prefWidth="123.0" text="Delete">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="resetBtn" layoutX="495.0" layoutY="259.0" mnemonicParsing="false" onAction="#clear" prefHeight="36.0" prefWidth="123.0" text="Reset">
+      <Button fx:id="resetBtn" layoutX="662.0" layoutY="267.0" mnemonicParsing="false" onAction="#clear" prefHeight="36.0" prefWidth="123.0" text="Reset">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
       <TableView layoutX="42.0" layoutY="333.0" prefHeight="257.0" prefWidth="874.0">
         <columns>
-            <TableColumn prefWidth="94.0" text="class_id" />
-            <TableColumn prefWidth="361.0" text="course_name" />
-            <TableColumn prefWidth="242.0" text="subject_name" />
-            <TableColumn prefWidth="480.0" text="lecture_name" />
+            <TableColumn prefWidth="186.0" text="class_id" />
+            <TableColumn prefWidth="186.0" text="course_id" />
+            <TableColumn prefWidth="186.0" text="subject_id" />
+            <TableColumn prefWidth="186.0" text="lecture_id" />
+           <TableColumn prefWidth="128.0" text="date" />
         </columns>
       </TableView>
-      <Label fx:id="dateLabel" layoutX="48.0" layoutY="258.0" prefHeight="43.0" prefWidth="213.0" text="Date :">
+      <Label fx:id="dateLabel" layoutX="48.0" layoutY="193.0" prefHeight="43.0" prefWidth="213.0" text="Date :">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <DatePicker fx:id="dateTxt" layoutX="189.0" layoutY="261.0" prefHeight="36.0" prefWidth="250.0" />
+      <DatePicker fx:id="dateTxt" layoutX="190.0" layoutY="197.0" prefHeight="36.0" prefWidth="250.0" />
    </children>
 </AnchorPane>

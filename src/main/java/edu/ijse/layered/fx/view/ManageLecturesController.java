@@ -71,7 +71,6 @@ public class ManageLecturesController {
             idTxt.setText("");
             nameTxt.setText("");
             contactTxt.setText("");
-            subjectsTxt.setText("");
     }
 
     @FXML
@@ -80,8 +79,7 @@ public class ManageLecturesController {
                 LecturerDto lecturerDto = new LecturerDto(
                         idTxt.getText(),
                         nameTxt.getText(),
-                        Integer.parseInt(contactTxt.getText()),
-                        subjectsTxt.getText()
+                        contactTxt.getText()
                 );
 
                 String rsp = lectureController.addLecture(lecturerDto);
@@ -102,8 +100,7 @@ public class ManageLecturesController {
                 LecturerDto lecturerDto = new LecturerDto(
                         idTxt.getText(),
                         nameTxt.getText(),
-                        Integer.parseInt(contactTxt.getText()),
-                        subjectsTxt.getText()
+                        contactTxt.getText()
                 );
 
                 String rsp = lectureController.updateLecture(lecturerDto);

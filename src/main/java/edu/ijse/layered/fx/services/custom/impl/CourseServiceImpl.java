@@ -14,10 +14,8 @@ public class CourseServiceImpl implements CourseService {
     public String addCourse(CourseDto courseDto) throws Exception {
 
         CourseEntity courseEntity = new CourseEntity(
-                courseDto.getCourse_id(),
-                courseDto.getName(),
-                courseDto.getSubjects()
-        );
+               courseDto.courseId,
+               courseDto.name);
 
         return courseDao.save(courseEntity) ? "Course Added Successfully" : "Course Added Failed";
     }
@@ -26,9 +24,8 @@ public class CourseServiceImpl implements CourseService {
     public String updateCourse(CourseDto courseDto) throws Exception {
 
         CourseEntity courseEntity = new CourseEntity(
-                courseDto.getCourse_id(),
-                courseDto.getName(),
-                courseDto.getSubjects()
+                courseDto.courseId,
+                courseDto.name
         );
 
         return courseDao.update(courseEntity) ? "Course Updated Successfully" : "Course Updated Failed";
