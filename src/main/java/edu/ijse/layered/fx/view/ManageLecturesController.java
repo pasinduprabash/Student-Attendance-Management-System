@@ -61,10 +61,19 @@ public class ManageLecturesController {
     @FXML
     private Button updateBtn;
 
-    //@FXML
-    //void deleteLecture(ActionEvent event) {
-
-    //}
+    @FXML
+    void deleteLecture(ActionEvent event) {
+        try {
+            String rsp = lectureController.deleteLecture(idTxt.getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
 
     @FXML
     void clear(ActionEvent event) {

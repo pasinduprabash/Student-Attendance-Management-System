@@ -104,6 +104,8 @@ public class MainMenuController {
         stage.setTitle("Manage Enrollment");
         stage.setResizable(false);
         stage.show();
+
+        ((Stage) enrollBtn.getScene().getWindow()).close();
     }
 
     @FXML

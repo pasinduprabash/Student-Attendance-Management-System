@@ -67,6 +67,7 @@ public class ManageStudentsController {
 
         try {
             String rsp = studentsController.deleteStudent(idTxt.getText());
+            clear(event);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
