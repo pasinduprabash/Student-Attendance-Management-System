@@ -16,7 +16,7 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     public boolean update(StudentEntity t) throws Exception {
-        return CrudUtil.executeUpdate("UPDATE student SET name = ? , contact_no = ? WHERE reg_number = ?",
+        return CrudUtil.executeUpdate("UPDATE student SET name = ? , contact_details = ? WHERE reg_number = ?",
                 t.getName(),
                 t.getContactDetails(),
                 t.getRegNum());

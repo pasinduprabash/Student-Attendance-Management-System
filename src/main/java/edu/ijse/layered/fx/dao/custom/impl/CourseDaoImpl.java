@@ -10,7 +10,7 @@ public class CourseDaoImpl implements CourseDao {
 
     @Override
     public boolean save(CourseEntity t) throws Exception{
-        return CrudUtil.executeUpdate("INSERT INTO course VALUES(?,?,?)",
+        return CrudUtil.executeUpdate("INSERT INTO course VALUES(?,?)",
                 t.getCourseId(),
                 t.getName());
     }

@@ -18,7 +18,7 @@ public class LecturerDaoImpl implements LecturerDao {
 
     @Override
     public boolean update(LecturerEntity t) throws Exception {
-        return CrudUtil.executeUpdate("UPDATE lecture SET name = ?, contact_no = ? WHERE lecture_id = ?",
+        return CrudUtil.executeUpdate("UPDATE lecture SET name = ?, contact_details = ? WHERE lecture_id = ?",
                 t.getName(),
                 t.getContactDetails(),
                 t.getLectureId());

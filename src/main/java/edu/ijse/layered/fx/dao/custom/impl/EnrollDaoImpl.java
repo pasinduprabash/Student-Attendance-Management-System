@@ -12,7 +12,7 @@ public class EnrollDaoImpl implements EnrollDao {
     public boolean save(EnrollEntity t) throws Exception{
         return CrudUtil.executeUpdate("INSERT INTO enroll VALUES(?,?)",
                 t.getRegNum(),
-                t.getRegNum());
+                t.getCourseId());
     }
 
     @Override

@@ -10,10 +10,10 @@ public class SubjectDaoImpl implements SubjectDao {
 
     @Override
     public boolean save(SubjectEntity t) throws Exception {
-        return CrudUtil.executeUpdate("INSERT INTO subject VALUES (?,?)",
-            t.getSubjectId(),
-            t.getName(),
-            t.getCourseId());
+        return CrudUtil.executeUpdate("INSERT INTO subject VALUES (?,?,?)",
+                t.getSubjectId(),
+                t.getCourseId(),
+                t.getName());
     }
 
     @Override

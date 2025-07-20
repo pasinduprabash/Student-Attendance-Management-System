@@ -84,6 +84,7 @@ public class ManageSubjectsController {
             );
 
             String rsp = subjectContoller.addSubject(subjectDto);
+            clear(event);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
