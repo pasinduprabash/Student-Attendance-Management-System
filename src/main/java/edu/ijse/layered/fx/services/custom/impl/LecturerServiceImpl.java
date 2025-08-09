@@ -6,6 +6,8 @@ import edu.ijse.layered.fx.dto.LecturerDto;
 import edu.ijse.layered.fx.entity.LecturerEntity;
 import edu.ijse.layered.fx.services.custom.LectureService;
 
+import java.util.ArrayList;
+
 public class LecturerServiceImpl implements LectureService {
 
     private LecturerDao lecturerDao = (LecturerDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.LECTURE);
@@ -48,5 +50,22 @@ public class LecturerServiceImpl implements LectureService {
         }
 
         return null;
+    }
+
+    @Override
+    public ArrayList<LecturerDto> getAllLectures() throws Exception {
+
+        ArrayList <LecturerDto> lecturerDtos = new ArrayList<>();
+        ArrayList <LecturerEntity> lecturerEntities = lecturerDao.viewAll();
+
+        for (LecturerEntity lecturerEntity : lecturerEntities){
+            lecturerDtos.add(new LecturerDto(
+               lecturerEntity.getLectureId(),
+               lecturerEntity.getName(),
+               lecturerEntity.getContactDetails()
+            ));
+        }
+
+        return lecturerDtos;
     }
 }

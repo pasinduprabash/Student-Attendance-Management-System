@@ -4,9 +4,12 @@ import edu.ijse.layered.fx.dao.DaoFactory;
 import edu.ijse.layered.fx.dao.custom.CourseDao;
 import edu.ijse.layered.fx.dto.CourseDto;
 import edu.ijse.layered.fx.dto.LecturerDto;
+import edu.ijse.layered.fx.entity.ClassEntity;
 import edu.ijse.layered.fx.entity.CourseEntity;
 import edu.ijse.layered.fx.entity.LecturerEntity;
 import edu.ijse.layered.fx.services.custom.CourseService;
+
+import java.util.ArrayList;
 
 public class CourseServiceImpl implements CourseService {
 
@@ -51,6 +54,22 @@ public class CourseServiceImpl implements CourseService {
         }
 
         return null;
+    }
+
+    @Override
+    public ArrayList<CourseDto> getAllCourses() throws Exception {
+
+        ArrayList <CourseDto> courseDtos = new ArrayList<>();
+        ArrayList <CourseEntity> courseEntities = courseDao.viewAll();
+
+        for (CourseEntity courseEntity : courseEntities){
+            courseDtos.add(new CourseDto(
+               courseEntity.getCourseId(),
+               courseEntity.getName()
+            ));
+        }
+
+        return courseDtos;
     }
 
 

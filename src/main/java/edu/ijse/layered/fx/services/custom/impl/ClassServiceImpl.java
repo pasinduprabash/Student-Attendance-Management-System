@@ -6,6 +6,8 @@ import edu.ijse.layered.fx.dto.ClassDto;
 import edu.ijse.layered.fx.entity.ClassEntity;
 import edu.ijse.layered.fx.services.custom.ClassService;
 
+import java.util.ArrayList;
+
 public class ClassServiceImpl implements ClassService {
 
     private ClassDao classDao = (ClassDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.CLASSES);
@@ -57,5 +59,24 @@ public class ClassServiceImpl implements ClassService {
         }
 
         return null;
+    }
+
+    @Override
+    public ArrayList<ClassDto> getAllClasses() throws Exception {
+
+        ArrayList <ClassDto> classDtos = new ArrayList<>();
+        ArrayList <ClassEntity> classEntities = classDao.viewAll();
+
+        for (ClassEntity classEntity : classEntities){
+            classDtos.add(new ClassDto(
+                    classEntity.getClassId(),
+                    classEntity.getCourseId(),
+                    classEntity.getSubjectId(),
+                    classEntity.getLectureId(),
+                    classEntity.getDate()
+            ));
+        }
+
+        return classDtos;
     }
 }

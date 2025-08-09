@@ -6,6 +6,8 @@ import edu.ijse.layered.fx.dto.SubjectDto;
 import edu.ijse.layered.fx.entity.SubjectEntity;
 import edu.ijse.layered.fx.services.custom.SubjectService;
 
+import java.util.ArrayList;
+
 public class SubjectServiceImpl implements SubjectService {
 
     private SubjectDao subjectDao = (SubjectDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.SUBJECT);
@@ -51,5 +53,22 @@ public class SubjectServiceImpl implements SubjectService {
         }
 
         return null;
+    }
+
+    @Override
+    public ArrayList<SubjectDto> getAllSubject() throws Exception {
+
+        ArrayList <SubjectDto> subjectDtos = new ArrayList<>();
+        ArrayList <SubjectEntity> subjectEntities = subjectDao.viewAll();
+
+        for (SubjectEntity subjectEntity : subjectEntities){
+            subjectDtos.add(new SubjectDto(
+               subjectEntity.getSubjectId(),
+               subjectEntity.getName(),
+               subjectEntity.getCourseId()
+            ));
+        }
+
+        return subjectDtos;
     }
 }
