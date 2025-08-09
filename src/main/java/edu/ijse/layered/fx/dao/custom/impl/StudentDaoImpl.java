@@ -4,6 +4,7 @@ import edu.ijse.layered.fx.dao.CrudUtil;
 import edu.ijse.layered.fx.dao.custom.StudentDao;
 import edu.ijse.layered.fx.entity.StudentEntity;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class StudentDaoImpl implements StudentDao {
@@ -28,8 +29,19 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public StudentEntity select(String s) throws Exception {
+    public StudentEntity select(String id) throws Exception {
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM student WHERE reg_number = ?",id);
+
+        if(rst.next()){
+            return new StudentEntity(
+              rst.getInt("reg_number"),
+              rst.getString("name"),
+              rst.getString("contact_details")
+            );
+        }
+
         return null;
+
     }
 
     @Override

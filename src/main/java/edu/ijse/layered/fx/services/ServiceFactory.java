@@ -29,13 +29,15 @@ public class ServiceFactory {
                 return new SubjectServiceImpl();
             case ENROLL:
                 return new EnrollServiceImpl();
+            case ATTENDANCE:
+                return new AttendanceServiceImpl();
             default:
                 throw new AssertionError();
         }
     }
 
     public enum ServiceTypes{
-        STUDENT,LECTURE,COURSE,CLASSES,SUBJECT,ENROLL;
+        STUDENT,LECTURE,COURSE,CLASSES,SUBJECT,ENROLL,ATTENDANCE;
     }
 }
 

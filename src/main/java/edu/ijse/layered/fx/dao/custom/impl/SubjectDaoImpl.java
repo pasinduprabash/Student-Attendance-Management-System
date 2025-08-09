@@ -4,6 +4,7 @@ import edu.ijse.layered.fx.dao.CrudUtil;
 import edu.ijse.layered.fx.dao.custom.SubjectDao;
 import edu.ijse.layered.fx.entity.SubjectEntity;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class SubjectDaoImpl implements SubjectDao {
@@ -31,7 +32,17 @@ public class SubjectDaoImpl implements SubjectDao {
 
     @Override
     public SubjectEntity select(String id) throws Exception {
-        return null;
+
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM subject WHERE sub_id",id);
+        if(rst.next()) {
+            return new SubjectEntity(
+                rst.getString("subject_id"),
+                rst.getString("name"),
+                rst.getString("course_id")
+            );
+        }
+
+            return null;
     }
 
     @Override

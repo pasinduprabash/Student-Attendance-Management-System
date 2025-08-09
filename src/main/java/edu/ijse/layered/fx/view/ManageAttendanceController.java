@@ -1,32 +1,29 @@
 package edu.ijse.layered.fx.view;
 
+import edu.ijse.layered.fx.custom.AttendanceStatus;
+import edu.ijse.layered.fx.controller.AttendanceController;
+import edu.ijse.layered.fx.dto.AttendanceDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class ManageAttendanceController {
 
+    private final AttendanceController attendanceController = new AttendanceController();
+
     @FXML
     private Button clearBtn;
 
     @FXML
-    private Label dateLabel;
+    private TextField courseTxt;
 
     @FXML
     private DatePicker datePicker;
-
-    @FXML
-    private Label lectureLabel;
 
     @FXML
     private TextField lectureTxt;
@@ -35,40 +32,58 @@ public class ManageAttendanceController {
     private Button menuBtn;
 
     @FXML
-    private Label statusLabel;
-
-    @FXML
-    private ComboBox<?> statusPicker;
-
-    @FXML
-    private Label studentLabel;
+    private ComboBox<AttendanceStatus> statusPicker;
 
     @FXML
     private TextField studentTxt;
 
     @FXML
-    private Label subjectLabel;
-
-    @FXML
     private TextField subjectTxt;
 
     @FXML
-    private Button submitBtn;
+    public void initialize() {
+        statusPicker.getItems().setAll(AttendanceStatus.values());
+        statusPicker.getSelectionModel().select(AttendanceStatus.Present);
+    }
 
     @FXML
-    private Label titleLabel;
+    void Clear(ActionEvent event) {
+        lectureTxt.clear();
+        studentTxt.clear();
+        courseTxt.clear();
+        subjectTxt.clear();
+        datePicker.setValue(null);
+        statusPicker.setValue(null);
+    }
 
     @FXML
-    private Hyperlink tradeMarkLabel;
+    void navigateDelete(ActionEvent event) {
+        try {
+            if (datePicker.getValue() == null) {
+                throw new IllegalArgumentException("Please select a date to delete.");
+            }
 
-    @FXML
-    void navigateClear(ActionEvent event) {
+            String rsp = attendanceController.deleteAttendance(datePicker.getValue().toString());
 
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+
+        } catch (IllegalArgumentException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
     }
 
     @FXML
     void navigateMainMenu(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/edu/ijse/layered/fx/MainMenu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/edu/ijse/layered/fx/MainMenu.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -80,8 +95,52 @@ public class ManageAttendanceController {
     }
 
     @FXML
-    void navigateSubmit(ActionEvent event) {
+    void navigateSave(ActionEvent event) {
+        try {
+            AttendanceDto attendanceDto = new AttendanceDto(
+                    datePicker.getValue(),
+                    lectureTxt.getText(),
+                    studentTxt.getText(),
+                    courseTxt.getText(),
+                    subjectTxt.getText(),
+                    statusPicker.getValue()
+            );
 
+            String rsp = attendanceController.saveAttendance(attendanceDto);
+            Clear(event);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
     }
 
+    @FXML
+    void navigateUpdate(ActionEvent event) {
+        try {
+            AttendanceDto attendanceDto = new AttendanceDto(
+                    datePicker.getValue(),
+                    lectureTxt.getText(),
+                    studentTxt.getText(),
+                    courseTxt.getText(),
+                    subjectTxt.getText(),
+                    statusPicker.getValue()
+            );
+
+            String rsp = attendanceController.updateAttendance(attendanceDto);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
 }

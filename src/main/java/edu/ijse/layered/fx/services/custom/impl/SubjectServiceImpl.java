@@ -36,4 +36,20 @@ public class SubjectServiceImpl implements SubjectService {
     public String deleteSubject(String id) throws Exception {
         return subjectDao.delete(id) ? "Subject Delete Successfully" :"Subject Deleted Failed";
     }
+
+    @Override
+    public SubjectDto searchSubject(String id) throws Exception {
+
+        SubjectEntity subjectEntity = subjectDao.select(id);
+
+        if(subjectEntity != null){
+            return new SubjectDto(
+                    subjectEntity.getSubjectId(),
+                    subjectEntity.getName(),
+                    subjectEntity.getCourseId()
+            );
+        }
+
+        return null;
+    }
 }

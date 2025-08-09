@@ -4,6 +4,7 @@ import edu.ijse.layered.fx.dao.CrudUtil;
 import edu.ijse.layered.fx.dao.custom.LecturerDao;
 import edu.ijse.layered.fx.entity.LecturerEntity;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class LecturerDaoImpl implements LecturerDao {
@@ -31,6 +32,16 @@ public class LecturerDaoImpl implements LecturerDao {
 
     @Override
     public LecturerEntity select(String s) throws Exception {
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM lecture");
+
+        if(rst.next()){
+            return new LecturerEntity(
+              rst.getString("Lecture_id"),
+              rst.getString("name"),
+              rst.getString("contact_details")
+            );
+
+        }
         return null;
     }
 

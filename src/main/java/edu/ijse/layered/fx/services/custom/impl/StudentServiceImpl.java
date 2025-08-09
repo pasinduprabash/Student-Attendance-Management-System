@@ -34,4 +34,18 @@ public class StudentServiceImpl implements StudentService {
     public String deleteStudent(String id) throws Exception {
         return studentDao.delete(id) ? "Student Deleted Successfully" : "Student Deleted Failed";
     }
+
+    @Override
+    public StudentDto searchStudent(String id) throws Exception {
+        StudentEntity studentEntity = studentDao.select(id);
+        if(studentEntity != null){
+            return new StudentDto(
+                    studentEntity.getRegNum(),
+                    studentEntity.getName(),
+                    studentEntity.getContactDetails()
+            );
+        }
+
+        return null;
+    }
 }
