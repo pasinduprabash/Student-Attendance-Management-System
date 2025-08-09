@@ -20,4 +20,8 @@ public class SubjectContoller {
         return subjectService.deleteSubject(id);
     }
 
+    public SubjectDto searchSubject(String id) throws Exception{
+        return subjectService.searchSubject(id);
+    }
+
 }

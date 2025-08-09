@@ -41,4 +41,21 @@ public class ClassServiceImpl implements ClassService {
     public String deleteClasses(String id) throws Exception {
         return classDao.delete(id) ? "Class Deleted" : "Class Deleted Failed";
     }
+
+    @Override
+    public ClassDto searchClasses(String id) throws Exception {
+
+        ClassEntity classEntity = classDao.select(id);
+        if(classEntity != null){
+            return new ClassDto(
+                    classEntity.getClassId(),
+                    classEntity.getCourseId(),
+                    classEntity.getSubjectId(),
+                    classEntity.getLectureId(),
+                    classEntity.getDate()
+            );
+        }
+
+        return null;
+    }
 }

@@ -47,6 +47,19 @@ public class SubjectDaoImpl implements SubjectDao {
 
     @Override
     public ArrayList<SubjectEntity> viewAll() throws Exception {
-        return null;
+
+       ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Subject");
+       ArrayList <SubjectEntity> subjectEntities = new ArrayList<>();
+
+       while (rst.next()){
+           subjectEntities.add(
+                   new SubjectEntity(
+                           rst.getString("subject_id"),
+                           rst.getString("course_id"),
+                           rst.getString("subject_name")
+                   ));
+       }
+
+        return subjectEntities;
     }
 }

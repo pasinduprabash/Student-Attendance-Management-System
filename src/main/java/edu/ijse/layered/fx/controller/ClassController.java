@@ -19,4 +19,8 @@ public class ClassController {
     public String deleteClasses(String id) throws Exception{
         return classesService.deleteClasses(id);
     }
+
+    public ClassDto searchClasses(String id) throws Exception{
+        return classesService.searchClasses(id);
+    }
 }

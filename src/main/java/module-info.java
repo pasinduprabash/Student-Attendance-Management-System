@@ -3,6 +3,7 @@ module edu.ijse.layered.fx {
     requires javafx.fxml;
     requires java.sql;
     requires static lombok;
+    requires jdk.compiler;
 
     exports edu.ijse.layered.fx;
 

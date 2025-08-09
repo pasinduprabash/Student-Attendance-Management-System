@@ -47,6 +47,18 @@ public class LecturerDaoImpl implements LecturerDao {
 
     @Override
     public ArrayList<LecturerEntity> viewAll() throws Exception {
-        return null;
+
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM lecture");
+        ArrayList <LecturerEntity> lecturerEntities = new ArrayList<>();
+
+        while (rst.next()){
+            lecturerEntities.add(new LecturerEntity(
+               rst.getString("lecture_id"),
+               rst.getString("name"),
+               rst.getString("contact_details")
+            ));
+        }
+
+        return lecturerEntities;
     }
 }

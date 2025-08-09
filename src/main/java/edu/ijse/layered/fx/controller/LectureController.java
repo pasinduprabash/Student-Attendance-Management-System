@@ -19,5 +19,9 @@ public class LectureController {
         public String deleteLecture(String id) throws Exception{
             return lectureService.deleteLecture(id);
         }
+
+        public LecturerDto searchLecture(String id) throws Exception{
+            return lectureService.searchLecture(id);
+        }
 }
 

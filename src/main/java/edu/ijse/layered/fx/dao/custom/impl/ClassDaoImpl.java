@@ -4,6 +4,7 @@ import edu.ijse.layered.fx.dao.CrudUtil;
 import edu.ijse.layered.fx.dao.custom.ClassDao;
 import edu.ijse.layered.fx.entity.ClassEntity;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class ClassDaoImpl implements ClassDao {
@@ -35,11 +36,38 @@ public class ClassDaoImpl implements ClassDao {
 
     @Override
     public ClassEntity select(String s) throws Exception {
+
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM class WHERE class_id = ?");
+
+        if(rst.next()){
+            return new ClassEntity(
+                rst.getString("class_id"),
+                rst.getString("course_id"),
+                rst.getString("subject_name"),
+                rst.getString("lecture_id"),
+                rst.getDate("date")
+            );
+        }
+
         return null;
     }
 
     @Override
     public ArrayList<ClassEntity> viewAll() throws Exception {
-        return null;
+
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM class");
+        ArrayList <ClassEntity> classEntities = new ArrayList<>();
+
+        while (rst.next()){
+            classEntities.add(new ClassEntity(
+                    rst.getString("class_id"),
+                    rst.getString("course_id"),
+                    rst.getString("subject_name"),
+                    rst.getString("lecture_id"),
+                    rst.getDate("date")
+            ));
+        }
+
+        return classEntities;
     }
 }

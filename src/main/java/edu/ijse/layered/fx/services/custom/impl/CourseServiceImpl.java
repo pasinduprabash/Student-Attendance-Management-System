@@ -3,7 +3,9 @@ package edu.ijse.layered.fx.services.custom.impl;
 import edu.ijse.layered.fx.dao.DaoFactory;
 import edu.ijse.layered.fx.dao.custom.CourseDao;
 import edu.ijse.layered.fx.dto.CourseDto;
+import edu.ijse.layered.fx.dto.LecturerDto;
 import edu.ijse.layered.fx.entity.CourseEntity;
+import edu.ijse.layered.fx.entity.LecturerEntity;
 import edu.ijse.layered.fx.services.custom.CourseService;
 
 public class CourseServiceImpl implements CourseService {
@@ -35,4 +37,21 @@ public class CourseServiceImpl implements CourseService {
     public String deleteCourse(String id) throws Exception {
         return courseDao.delete(id) ? "Course Deleted Successfully" : "Course Deleted Failed";
     }
+
+    @Override
+    public CourseDto searchCourse(String id) throws Exception {
+
+        CourseEntity courseEntity = courseDao.select(id);
+
+        if(courseEntity != null){
+            return new CourseDto(
+                    courseEntity.getCourseId(),
+                    courseEntity.getName()
+            );
+        }
+
+        return null;
+    }
+
+
 }

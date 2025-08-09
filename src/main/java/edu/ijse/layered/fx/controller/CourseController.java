@@ -20,4 +20,8 @@ public class CourseController {
         return courseservice.deleteCourse(id);
     }
 
+    public CourseDto searchCourse(String id) throws Exception{
+        return courseservice.searchCourse(id);
+    }
+
 }

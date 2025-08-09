@@ -1,5 +1,6 @@
 package edu.ijse.layered.fx.controller;
 
+import edu.ijse.layered.fx.dto.LecturerDto;
 import edu.ijse.layered.fx.dto.StudentDto;
 import edu.ijse.layered.fx.services.ServiceFactory;
 import edu.ijse.layered.fx.services.custom.StudentService;
@@ -18,5 +19,9 @@ public class StudentsController {
 
     public String deleteStudent(String id) throws Exception{
         return studentService.deleteStudent(id);
+    }
+
+    public StudentDto searchStudent(String id) throws Exception{
+        return studentService.searchStudent(id);
     }
 }

@@ -8,5 +8,6 @@ public interface ClassService extends SuperService {
     public String addClasses(ClassDto classesDto) throws Exception;
     public String updateClasses(ClassDto classesDto) throws Exception;
     public String deleteClasses(String id) throws Exception;
+    public ClassDto searchClasses(String id) throws Exception;
 
 }

@@ -1,5 +1,6 @@
 package edu.ijse.layered.fx.dao.custom.impl;
 
+import com.sun.source.tree.WhileLoopTree;
 import edu.ijse.layered.fx.dao.CrudUtil;
 import edu.ijse.layered.fx.dao.custom.StudentDao;
 import edu.ijse.layered.fx.entity.StudentEntity;
@@ -46,7 +47,19 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public ArrayList<StudentEntity> viewAll() throws Exception {
-        return null;
+
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM student");
+        ArrayList <StudentEntity> studentEntities = new ArrayList<>();
+
+        while (rst.next()) {
+            studentEntities.add(new StudentEntity(
+                    rst.getInt("reg_number"),
+                    rst.getString("name"),
+                    rst.getString("contact_details")
+            ));
+        }
+
+        return studentEntities;
     }
 
 }

@@ -34,4 +34,19 @@ public class LecturerServiceImpl implements LectureService {
     public String deleteLecture(String id) throws Exception{
         return lecturerDao.delete(id) ? "Lecture Deleted Successfully" : "Lecture Deleted Failed";
     }
+
+    @Override
+    public LecturerDto searchLecture(String id) throws Exception {
+
+        LecturerEntity lecturerEntity = lecturerDao.select(id);
+        if(lecturerEntity != null){
+            return new LecturerDto(
+                lecturerEntity.getLectureId(),
+                lecturerEntity.getName(),
+                lecturerEntity.getContactDetails()
+            );
+        }
+
+        return null;
+    }
 }
