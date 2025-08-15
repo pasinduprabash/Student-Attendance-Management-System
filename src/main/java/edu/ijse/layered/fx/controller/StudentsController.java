@@ -5,6 +5,8 @@ import edu.ijse.layered.fx.dto.StudentDto;
 import edu.ijse.layered.fx.services.ServiceFactory;
 import edu.ijse.layered.fx.services.custom.StudentService;
 
+import java.util.ArrayList;
+
 public class StudentsController {
 
     private StudentService studentService = (StudentService) ServiceFactory.getInstance().getService(ServiceFactory.ServiceTypes.STUDENT);
@@ -23,5 +25,9 @@ public class StudentsController {
 
     public StudentDto searchStudent(String id) throws Exception{
         return studentService.searchStudent(id);
+    }
+
+    public ArrayList <StudentDto> getAllStudent() throws Exception{
+        return studentService.getAllStudents();
     }
 }

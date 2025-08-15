@@ -4,6 +4,8 @@ import edu.ijse.layered.fx.dto.ClassDto;
 import edu.ijse.layered.fx.services.ServiceFactory;
 import edu.ijse.layered.fx.services.custom.ClassService;
 
+import java.util.ArrayList;
+
 public class ClassController {
 
     private ClassService classesService = (ClassService) ServiceFactory.getInstance().getService(ServiceFactory.ServiceTypes.CLASSES);
@@ -22,5 +24,9 @@ public class ClassController {
 
     public ClassDto searchClasses(String id) throws Exception{
         return classesService.searchClasses(id);
+    }
+
+    public ArrayList <ClassDto> getAllClasses() throws Exception{
+        return classesService.getAllClasses();
     }
 }

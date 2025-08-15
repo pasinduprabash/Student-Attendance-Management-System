@@ -1,13 +1,14 @@
 module edu.ijse.layered.fx {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.sql;
     requires static lombok;
-    requires jdk.compiler;
+    requires java.sql;
 
-    exports edu.ijse.layered.fx;
-
-    opens edu.ijse.layered.fx to javafx.fxml;
     opens edu.ijse.layered.fx.view to javafx.fxml;
+    opens edu.ijse.layered.fx.dto to javafx.base;
+    opens edu.ijse.layered.fx to javafx.graphics;
+
     exports edu.ijse.layered.fx.view;
+    exports edu.ijse.layered.fx.dto;
+    exports edu.ijse.layered.fx;
 }

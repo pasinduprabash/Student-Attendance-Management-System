@@ -65,7 +65,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <TableView fx:id="detailsTabel" layoutX="51.0" layoutY="265.0" prefHeight="331.0" prefWidth="872.0">
+      <TableView fx:id="detailsTable" layoutX="51.0" layoutY="265.0" prefHeight="331.0" prefWidth="872.0">
          <columns>
             <TableColumn fx:id="course_id" prefWidth="285.0" text="course_id" />
             <TableColumn fx:id="subject_id" prefWidth="285.0" text="subject_id" />

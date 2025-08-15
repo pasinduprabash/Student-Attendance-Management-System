@@ -1,89 +1,75 @@
 package edu.ijse.layered.fx.view;
 
-import edu.ijse.layered.fx.controller.SubjectContoller;
+import edu.ijse.layered.fx.controller.SubjectController;
 import edu.ijse.layered.fx.dto.SubjectDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ManageSubjectsController {
 
-    private SubjectContoller subjectContoller = new SubjectContoller();
-
-    @FXML
-    private Label courseLabel;
-
-    @FXML
-    private TextField courseTxt;
-
-    @FXML
-    private TableColumn<?, ?> course_id;
-
-    @FXML
-    private Button deleteBtn;
-
-    @FXML
-    private TableView<?> detailsTabel;
-
-    @FXML
-    private Label idLabel;
+    private final SubjectController subjectController = new SubjectController();
 
     @FXML
     private TextField idTxt;
 
     @FXML
-    private Label nameLabel;
-
-    @FXML
     private TextField nameTxt;
 
     @FXML
-    private Button resetBtn;
+    private TextField courseTxt;
 
     @FXML
-    private Button saveBtn;
+    private TableView<SubjectDto> detailsTable;
 
     @FXML
-    private TableColumn<?, ?> subject_id;
+    private TableColumn<SubjectDto, String> subject_id;
 
     @FXML
-    private TableColumn<?, ?> subject_name;
+    private TableColumn<SubjectDto, String> subject_name;
 
     @FXML
-    private Button updateBtn;
+    private TableColumn<SubjectDto, String> course_id;
 
     @FXML
-    void clear(ActionEvent event) {
-        idTxt.setText("");
-        nameTxt.setText("");
-        courseTxt.setText("");
+    public void initialize() {
+
+        subject_id.setCellValueFactory(new PropertyValueFactory<>("subjectId"));
+        course_id.setCellValueFactory(new PropertyValueFactory<>("courseId"));
+        subject_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        loadAllSubjects();
+    }
+
+    private void loadAllSubjects() {
+        try {
+           detailsTable.getItems().clear();
+           detailsTable.getItems().addAll(subjectController.getAllSubject());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
     }
 
     @FXML
-    void deleteSubjects(ActionEvent event) {
-
-            try {
-                String rsp = subjectContoller.deleteSubject(idTxt.getText());
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText(rsp);
-                alert.showAndWait();
-            } catch (Exception e) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setContentText(e.getMessage());
-                alert.showAndWait();
-            }
+    void clear(ActionEvent event) {
+        idTxt.clear();
+        nameTxt.clear();
+        courseTxt.clear();
     }
 
     @FXML
     void saveSubjects(ActionEvent event) {
+
         try {
             SubjectDto subjectDto = new SubjectDto(
                     idTxt.getText(),
                     nameTxt.getText(),
                     courseTxt.getText()
             );
-
-            String rsp = subjectContoller.addSubject(subjectDto);
+            String rsp = subjectController.addSubject(subjectDto);
+            detailsTable.getItems().add(subjectDto);
             clear(event);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
@@ -105,8 +91,8 @@ public class ManageSubjectsController {
                     nameTxt.getText(),
                     courseTxt.getText()
             );
-
-            String rsp = subjectContoller.updateSubject(subjectDto);
+            String rsp = subjectController.updateSubject(subjectDto);
+            loadAllSubjects();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -116,7 +102,23 @@ public class ManageSubjectsController {
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
-
     }
 
+    @FXML
+    void deleteSubjects(ActionEvent event) {
+
+        try {
+            String rsp = subjectController.deleteSubject(idTxt.getText());
+            loadAllSubjects();
+            clear(event);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
 }

@@ -5,13 +5,14 @@ import edu.ijse.layered.fx.dto.LecturerDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ManageLecturesController {
 
     private LectureController lectureController = new LectureController();
 
     @FXML
-    private TableColumn<?, ?> contactColmn;
+    private TableColumn<LecturerDto, String> contactColmn;
 
     @FXML
     private Label contactLabel;
@@ -23,10 +24,10 @@ public class ManageLecturesController {
     private Button deleteBtn;
 
     @FXML
-    private TableView<?> detailsTabel;
+    private TableView<LecturerDto> detailsTabel;
 
     @FXML
-    private TableColumn<?, ?> idColmn;
+    private TableColumn<LecturerDto, String> idColmn;
 
     @FXML
     private Label idLabel;
@@ -35,7 +36,7 @@ public class ManageLecturesController {
     private TextField idTxt;
 
     @FXML
-    private TableColumn<?, ?> nameColmn;
+    private TableColumn<LecturerDto, String > nameColmn;
 
     @FXML
     private Label nameLabel;
@@ -50,7 +51,7 @@ public class ManageLecturesController {
     private Button saveBtn;
 
     @FXML
-    private TableColumn<?, ?> subjectsColmn;
+    private TableColumn<LecturerDto, String> subjectsColmn;
 
     @FXML
     private Label subjectsLabel;
@@ -60,6 +61,29 @@ public class ManageLecturesController {
 
     @FXML
     private Button updateBtn;
+
+    @FXML
+    private void initialize(){
+        idColmn.setCellValueFactory(new PropertyValueFactory<>("lectureId"));
+        nameColmn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        contactColmn.setCellValueFactory(new PropertyValueFactory<>("contactDetails"));
+
+        loadTable();
+    }
+
+    @FXML
+    public void loadTable(){
+
+        try {
+            detailsTabel.getItems().clear();
+            detailsTabel.getItems().addAll(lectureController.getAllLectures());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+
+    }
 
     @FXML
     void deleteLecture(ActionEvent event) {
@@ -93,6 +117,7 @@ public class ManageLecturesController {
 
                 String rsp = lectureController.addLecture(lecturerDto);
                 clear(event);
+                loadTable();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setContentText(rsp);
                 alert.showAndWait();
@@ -113,6 +138,8 @@ public class ManageLecturesController {
                 );
 
                 String rsp = lectureController.updateLecture(lecturerDto);
+                clear(event);
+                loadTable();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setContentText(rsp);
                 alert.showAndWait();
@@ -128,6 +155,7 @@ public class ManageLecturesController {
         try {
             String rsp = lectureController.deleteLecture(idTxt.getText());
             clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();

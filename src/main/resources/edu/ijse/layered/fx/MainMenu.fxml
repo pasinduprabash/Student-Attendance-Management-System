@@ -30,50 +30,50 @@
                 <Font size="12.0" />
             </font>
         </Hyperlink>
-      <Button fx:id="studentsBtn" layoutX="490.0" layoutY="75.0" mnemonicParsing="false" onAction="#navigateStudents" prefHeight="34.0" prefWidth="233.0" text="Manage Students">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="lecturesBtn" layoutX="490.0" layoutY="126.0" mnemonicParsing="false" onAction="#navigateLectures" prefHeight="34.0" prefWidth="233.0" text="Manage Lectures">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="coursesBtn" layoutX="490.0" layoutY="231.0" mnemonicParsing="false" onAction="#navigateCourses" prefHeight="34.0" prefWidth="233.0" text="Manage Courses">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="classesBtn" layoutX="491.0" layoutY="284.0" mnemonicParsing="false" onAction="#navigateClasses" prefHeight="34.0" prefWidth="233.0" text="Manage Classes">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="logOutBtn" layoutX="491.0" layoutY="490.0" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="233.0" text="Log Out">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="attendenceBtn" layoutX="491.0" layoutY="386.0" mnemonicParsing="false" onAction="#navigateAttendence" prefHeight="34.0" prefWidth="233.0" text="Manage Attendance">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="subjectsBtn" layoutX="491.0" layoutY="178.0" mnemonicParsing="false" onAction="#navigateSubjects" prefHeight="34.0" prefWidth="233.0" text="Manage Subjects">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="reportsBtn" layoutX="490.0" layoutY="437.0" mnemonicParsing="false" onAction="#navigateReports" prefHeight="34.0" prefWidth="233.0" text="View Reports">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="enrollBtn" layoutX="491.0" layoutY="335.0" mnemonicParsing="false" onAction="#navigateEnroll" prefHeight="34.0" prefWidth="233.0" text="Manage Enroll">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
+        <Button fx:id="studentsBtn" layoutX="490.0" layoutY="75.0" mnemonicParsing="false" onAction="#navigateStudents" prefHeight="34.0" prefWidth="233.0" text="Manage Students">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="lecturesBtn" layoutX="490.0" layoutY="126.0" mnemonicParsing="false" onAction="#navigateLectures" prefHeight="34.0" prefWidth="233.0" text="Manage Lectures">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="coursesBtn" layoutX="490.0" layoutY="231.0" mnemonicParsing="false" onAction="#navigateCourses" prefHeight="34.0" prefWidth="233.0" text="Manage Courses">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="classesBtn" layoutX="491.0" layoutY="284.0" mnemonicParsing="false" onAction="#navigateClasses" prefHeight="34.0" prefWidth="233.0" text="Manage Classes">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="logOutBtn" layoutX="491.0" layoutY="490.0" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="233.0" text="Log Out">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="attendenceBtn" layoutX="491.0" layoutY="386.0" mnemonicParsing="false" onAction="#navigateAttendence" prefHeight="34.0" prefWidth="233.0" text="Manage Attendance">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="subjectsBtn" layoutX="491.0" layoutY="178.0" mnemonicParsing="false" onAction="#navigateSubjects" prefHeight="34.0" prefWidth="233.0" text="Manage Subjects">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="reportsBtn" layoutX="490.0" layoutY="437.0" mnemonicParsing="false" onAction="#navigateReports" prefHeight="34.0" prefWidth="233.0" text="View Reports">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="enrollBtn" layoutX="491.0" layoutY="335.0" mnemonicParsing="false" onAction="#navigateEnroll" prefHeight="34.0" prefWidth="233.0" text="Manage Enroll">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>

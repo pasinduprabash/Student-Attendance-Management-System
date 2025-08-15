@@ -48,7 +48,7 @@ public class SubjectDaoImpl implements SubjectDao {
     @Override
     public ArrayList<SubjectEntity> viewAll() throws Exception {
 
-       ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Subject");
+       ResultSet rst = CrudUtil.executeQuery("SELECT * FROM subject");
        ArrayList <SubjectEntity> subjectEntities = new ArrayList<>();
 
        while (rst.next()){

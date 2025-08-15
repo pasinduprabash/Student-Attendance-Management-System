@@ -4,7 +4,9 @@ import edu.ijse.layered.fx.dto.SubjectDto;
 import edu.ijse.layered.fx.services.ServiceFactory;
 import edu.ijse.layered.fx.services.custom.SubjectService;
 
-public class SubjectContoller {
+import java.util.ArrayList;
+
+public class SubjectController {
 
     private SubjectService subjectService = (SubjectService) ServiceFactory.getInstance().getService(ServiceFactory.ServiceTypes.SUBJECT);
 
@@ -22,6 +24,10 @@ public class SubjectContoller {
 
     public SubjectDto searchSubject(String id) throws Exception{
         return subjectService.searchSubject(id);
+    }
+
+    public ArrayList <SubjectDto> getAllSubject () throws Exception{
+        return subjectService.getAllSubject();
     }
 
 }

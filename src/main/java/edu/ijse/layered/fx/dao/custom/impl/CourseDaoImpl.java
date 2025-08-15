@@ -52,7 +52,7 @@ public class CourseDaoImpl implements CourseDao {
         while (rst.next()){
             courseEntities.add(new CourseEntity(
                rst.getString("course_id"),
-               rst.getString("course_name")
+               rst.getString("name")
             ));
         }
 

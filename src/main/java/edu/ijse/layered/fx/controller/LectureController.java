@@ -4,6 +4,8 @@ import edu.ijse.layered.fx.dto.LecturerDto;
 import edu.ijse.layered.fx.services.ServiceFactory;
 import edu.ijse.layered.fx.services.custom.LectureService;
 
+import java.util.ArrayList;
+
 public class LectureController {
 
     private LectureService lectureService = (LectureService) ServiceFactory.getInstance().getService(ServiceFactory.ServiceTypes.LECTURE);
@@ -22,6 +24,10 @@ public class LectureController {
 
         public LecturerDto searchLecture(String id) throws Exception{
             return lectureService.searchLecture(id);
+        }
+
+        public ArrayList <LecturerDto> getAllLectures() throws Exception{
+            return lectureService.getAllLectures();
         }
 }
 

@@ -5,22 +5,23 @@ import edu.ijse.layered.fx.dto.CourseDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ManageCoursesController {
 
     private CourseController courseController = new CourseController();
 
     @FXML
-    private TableColumn<?, ?> colId;
+    private TableColumn<CourseDto, String> colId;
 
     @FXML
-    private TableColumn<?, ?> colName;
+    private TableColumn<CourseDto, String> colName;
 
     @FXML
     private Button deleteBtn;
 
     @FXML
-    private TableView<?> detailsTabel;
+    private TableView<CourseDto> detailsTabel;
 
     @FXML
     private Label idLabel;
@@ -44,6 +45,27 @@ public class ManageCoursesController {
     private Button updateBtn;
 
     @FXML
+    private void initialize(){
+        colId.setCellValueFactory(new PropertyValueFactory<>("courseId"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+
+        loadTable();
+
+    }
+
+    @FXML
+    public void loadTable(){
+        try {
+            detailsTabel.getItems().clear();
+            detailsTabel.getItems().addAll(courseController.getAllCourse());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
     void clear(ActionEvent event) {
             idTxt.setText("");
             nameTxt.setText("");
@@ -60,6 +82,7 @@ public class ManageCoursesController {
 
             String rsp = courseController.addCourse(courseDto);
             clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -80,6 +103,8 @@ public class ManageCoursesController {
             );
 
             String rsp = courseController.updateCourse(courseDto);
+            clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -94,6 +119,8 @@ public class ManageCoursesController {
     public void deleteCourse(ActionEvent event) {
         try {
             String rsp = courseController.deleteCourse(idTxt.getText());
+            clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();

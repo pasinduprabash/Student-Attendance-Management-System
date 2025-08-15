@@ -5,22 +5,23 @@ import edu.ijse.layered.fx.dto.StudentDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ManageStudentsController {
 
     private StudentsController studentsController = new StudentsController();
 
     @FXML
-    private TableColumn<?, ?> colContact;
+    private TableColumn<StudentDto, String> colContact;
 
     @FXML
-    private TableColumn<?, ?> colCourse;
+    private TableColumn<StudentDto, String> colCourse;
 
     @FXML
-    private TableColumn<?, ?> colId;
+    private TableColumn<StudentDto, Integer> colId;
 
     @FXML
-    private TableColumn<?, ?> colName;
+    private TableColumn<StudentDto, String> colName;
 
     @FXML
     private Label contactLabel;
@@ -32,7 +33,7 @@ public class ManageStudentsController {
     private Button deleteBtn;
 
     @FXML
-    private TableView<?> detailsTabel;
+    private TableView<StudentDto> detailsTabel;
 
     @FXML
     private Label idLabel;
@@ -56,6 +57,29 @@ public class ManageStudentsController {
     private Button updateBtn;
 
     @FXML
+    public void initialize(){
+
+        colId.setCellValueFactory(new PropertyValueFactory<>("regNum"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colCourse.setCellValueFactory(new PropertyValueFactory<>("course"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contactDetails"));
+        loadTable();
+
+    }
+
+    @FXML
+    private void loadTable(){
+        try {
+            detailsTabel.getItems().clear();
+            detailsTabel.getItems().addAll(studentsController.getAllStudent());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
     void clear(ActionEvent event) {
             idTxt.setText("");
             nameTxt.setText("");
@@ -68,6 +92,7 @@ public class ManageStudentsController {
         try {
             String rsp = studentsController.deleteStudent(idTxt.getText());
             clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -89,6 +114,8 @@ public class ManageStudentsController {
             );
 
             String rsp = studentsController.addStudent(studentDto);
+            clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -110,6 +137,8 @@ public class ManageStudentsController {
                             contactTxt.getText());
 
             String rsp = studentsController.updateStudents(studentDto);
+            clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
