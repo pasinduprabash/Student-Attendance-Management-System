@@ -5,22 +5,23 @@ import edu.ijse.layered.fx.dto.EnrollDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ManageEnrollmentController {
 
     final private EnrollController enrollController = new EnrollController();
 
     @FXML
-    private TableColumn<?, ?> colCourseId;
+    private TableColumn<EnrollDto, String> colCourseId;
 
     @FXML
-    private TableColumn<?, ?> colRegNum;
+    private TableColumn<EnrollDto, Integer> colRegNum;
 
     @FXML
     private Button deleteBtn;
 
     @FXML
-    private TableView<?> detailsTable;
+    private TableView<EnrollDto> detailsTable;
 
     @FXML
     private Label idLabel;
@@ -44,6 +45,25 @@ public class ManageEnrollmentController {
     private Button updateBtn;
 
     @FXML
+    private void initialize(){
+        colRegNum.setCellValueFactory(new PropertyValueFactory<>("regNum"));
+        colCourseId.setCellValueFactory(new PropertyValueFactory<>("courseId"));
+        loadTable();
+    }
+
+    @FXML
+    public void loadTable(){
+        try {
+            detailsTable.getItems().clear();
+            detailsTable.getItems().addAll(enrollController.getAllEnroll());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
     void saveEnrollment(ActionEvent event) {
         try {
             EnrollDto enrollDto = new EnrollDto(
@@ -52,6 +72,7 @@ public class ManageEnrollmentController {
             );
 
             String rsp = enrollController.addEnroll(enrollDto);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -62,4 +83,44 @@ public class ManageEnrollmentController {
         }
     }
 
+    public void updateEnrollment(ActionEvent event) {
+
+        try {
+            EnrollDto enrollDto = new EnrollDto(
+                    Integer.parseInt(regTxt.getText()),
+                    idTxt.getText());
+
+            String rsp = enrollController.updateEnroll(enrollDto);
+            loadTable();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+
+    }
+
+    public void deleteEnrollment(ActionEvent event) {
+
+        try {
+            String rsp = enrollController.deleteEnroll(regTxt.getText());
+            loadTable();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(rsp);
+            alert.showAndWait();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+
+    }
+
+    public void clear(ActionEvent event) {
+        regTxt.setText("");
+        idTxt.setText("");
+    }
 }

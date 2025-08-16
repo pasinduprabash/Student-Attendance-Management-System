@@ -1,23 +1,37 @@
 package edu.ijse.layered.fx.view;
 
-import edu.ijse.layered.fx.custom.AttendanceStatus;
 import edu.ijse.layered.fx.controller.AttendanceController;
+import edu.ijse.layered.fx.custom.AttendanceStatus;
 import edu.ijse.layered.fx.dto.AttendanceDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.IOException;
+import java.util.Date;
+import java.util.Objects;
 
 public class ManageAttendanceController {
 
-    private final AttendanceController attendanceController = new AttendanceController();
+    final private AttendanceController attendanceController = new AttendanceController();
 
     @FXML
-    private Button clearBtn;
+    private TableColumn<AttendanceDto, String> colCourseName;
+
+    @FXML
+    private TableColumn<AttendanceDto, Date> colDate;
+
+    @FXML
+    private TableColumn<AttendanceDto, String> colLectureId;
+
+    @FXML
+    private TableColumn<AttendanceDto, Objects> colStatus;
+
+    @FXML
+    private TableColumn<AttendanceDto, String> colStudentName;
+
+    @FXML
+    private TableColumn<AttendanceDto, String> colSubjectName;
 
     @FXML
     private TextField courseTxt;
@@ -26,13 +40,22 @@ public class ManageAttendanceController {
     private DatePicker datePicker;
 
     @FXML
+    private Button deleteBtn;
+
+    @FXML
+    private TableView<AttendanceDto> detailsTable;
+
+    @FXML
     private TextField lectureTxt;
 
     @FXML
-    private Button menuBtn;
+    private Button resetBtn;
 
     @FXML
-    private ComboBox<AttendanceStatus> statusPicker;
+    private Button saveBtn;
+
+    @FXML
+    private ComboBox<?> statusPicker;
 
     @FXML
     private TextField studentTxt;
@@ -41,9 +64,30 @@ public class ManageAttendanceController {
     private TextField subjectTxt;
 
     @FXML
-    public void initialize() {
-        statusPicker.getItems().setAll(AttendanceStatus.values());
-        statusPicker.getSelectionModel().select(AttendanceStatus.Present);
+    private Button updateBtn;
+
+    @FXML
+    private void initialize() {
+        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colLectureId.setCellValueFactory(new PropertyValueFactory<>("lecture_id"));
+        colStudentName.setCellValueFactory(new PropertyValueFactory<>("student_name"));
+        colCourseName.setCellValueFactory(new PropertyValueFactory<>("course_name"));
+        colSubjectName.setCellValueFactory(new PropertyValueFactory<>("subject_name"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        loadTable();
+    }
+
+    @FXML
+    public void loadTable(){
+        try {
+            detailsTable.getItems().clear();
+            //detailsTable.getItems().addAll(attendanceController)
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+
     }
 
     @FXML
@@ -90,7 +134,7 @@ public class ManageAttendanceController {
                     studentTxt.getText(),
                     courseTxt.getText(),
                     subjectTxt.getText(),
-                    statusPicker.getValue()
+                    (AttendanceStatus) statusPicker.getValue()
             );
 
             String rsp = attendanceController.saveAttendance(attendanceDto);
@@ -115,7 +159,7 @@ public class ManageAttendanceController {
                     studentTxt.getText(),
                     courseTxt.getText(),
                     subjectTxt.getText(),
-                    statusPicker.getValue()
+                    (AttendanceStatus) statusPicker.getValue()
             );
 
             String rsp = attendanceController.updateAttendance(attendanceDto);

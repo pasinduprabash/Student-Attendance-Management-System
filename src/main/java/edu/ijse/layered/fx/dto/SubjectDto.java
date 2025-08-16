@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class SubjectDto {
     public String subjectId;
-    public String courseId;
     public String name;
+    public String courseId;
 
 }
 

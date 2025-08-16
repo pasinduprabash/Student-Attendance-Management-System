@@ -15,7 +15,7 @@ public class ManageStudentsController {
     private TableColumn<StudentDto, String> colContact;
 
     @FXML
-    private TableColumn<StudentDto, String> colId;
+    private TableColumn<StudentDto, Integer> colId;
 
     @FXML
     private TableColumn<StudentDto, String> colName;

@@ -45,7 +45,7 @@ public class ClassDaoImpl implements ClassDao {
                 rst.getString("course_id"),
                 rst.getString("subject_name"),
                 rst.getString("lecture_id"),
-                rst.getDate("date")
+                rst.getDate("date").toLocalDate()
             );
         }
 
@@ -64,7 +64,7 @@ public class ClassDaoImpl implements ClassDao {
                     rst.getString("course_id"),
                     rst.getString("subject_name"),
                     rst.getString("lecture_id"),
-                    rst.getDate("date")
+                    rst.getDate("date").toLocalDate()
             ));
         }
 

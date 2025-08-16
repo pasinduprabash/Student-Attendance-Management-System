@@ -23,17 +23,17 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="updateBtn" layoutX="618.0" layoutY="86.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="89.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="618.0" layoutY="86.0" mnemonicParsing="false" onAction="#updateEnrollment" prefHeight="29.0" prefWidth="89.0" text="Update">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="deleteBtn" layoutX="508.0" layoutY="134.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="89.0" text="Delete">
+      <Button fx:id="deleteBtn" layoutX="508.0" layoutY="134.0" mnemonicParsing="false" onAction="#deleteEnrollment" prefHeight="29.0" prefWidth="89.0" text="Delete">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="resetBtn" layoutX="618.0" layoutY="134.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="89.0" text="Reset">
+      <Button fx:id="resetBtn" layoutX="618.0" layoutY="134.0" mnemonicParsing="false" onAction="#clear" prefHeight="29.0" prefWidth="89.0" text="Reset">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

@@ -19,4 +19,6 @@ public class AttendanceController {
     public String deleteAttendance(String date) throws Exception{
         return attendanceservice.deleteAttendance(date);
     }
+
+
 }

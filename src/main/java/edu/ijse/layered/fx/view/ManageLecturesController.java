@@ -86,20 +86,6 @@ public class ManageLecturesController {
     }
 
     @FXML
-    void deleteLecture(ActionEvent event) {
-        try {
-            String rsp = lectureController.deleteLecture(idTxt.getText());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText(rsp);
-            alert.showAndWait();
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
-        }
-    }
-
-    @FXML
     void clear(ActionEvent event) {
             idTxt.setText("");
             nameTxt.setText("");
@@ -151,7 +137,7 @@ public class ManageLecturesController {
 
     }
 
-    public void deleteLectures(ActionEvent event) {
+    public void deleteLecture(ActionEvent event) {
         try {
             String rsp = lectureController.deleteLecture(idTxt.getText());
             clear(event);

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class SubjectEntity {
     private String subjectId;
-    private String courseId;
     private String name;
+    private String courseId;
 
 }

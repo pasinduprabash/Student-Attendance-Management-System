@@ -6,6 +6,8 @@ import edu.ijse.layered.fx.dto.EnrollDto;
 import edu.ijse.layered.fx.entity.EnrollEntity;
 import edu.ijse.layered.fx.services.custom.EnrollService;
 
+import java.util.ArrayList;
+
 public class EnrollServiceImpl implements EnrollService {
 
     private EnrollDao enrollDao = (EnrollDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.ENROLL);
@@ -23,11 +25,49 @@ public class EnrollServiceImpl implements EnrollService {
 
     @Override
     public String updateEnroll(EnrollDto enrollDto) throws Exception {
-        return "";
+
+        EnrollEntity enrollEntity = new EnrollEntity(
+                enrollDto.regNum,
+                enrollDto.courseId
+        );
+
+        return enrollDao.update(enrollEntity) ? "Enroll Updated Successfully" : "Enroll Updated Failed";
     }
 
     @Override
-    public String deleteEnroll(EnrollDto enrollDto) throws Exception {
-        return "";
+    public String deleteEnroll(String id) throws Exception {
+        return enrollDao.delete(id) ? "Enroll Details Deleted" : "Enroll Details Deleted Failed";
+    }
+
+    @Override
+    public EnrollDto selectEnroll(String id) throws Exception {
+
+        EnrollEntity enrollEntity = enrollDao.select(id);
+
+        if(enrollEntity != null){
+            return new EnrollDto(
+              enrollEntity.getRegNum(),
+              enrollEntity.getCourseId()
+            );
+        }
+
+        return null;
+    }
+
+    @Override
+    public ArrayList<EnrollDto> getAllEnroll() throws Exception {
+
+        ArrayList <EnrollDto> enrollDtos = new ArrayList<>();
+        ArrayList <EnrollEntity> enrollEntities = enrollDao.viewAll();
+
+        for (EnrollEntity enrollEntity : enrollEntities){
+            enrollDtos.add(new EnrollDto(
+                enrollEntity.getRegNum(),
+                enrollEntity.getCourseId()
+            ));
+        }
+
+        return enrollDtos;
+
     }
 }

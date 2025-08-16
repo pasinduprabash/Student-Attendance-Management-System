@@ -8,20 +8,41 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ManageSubjectsController {
-
+    
     private final SubjectController subjectController = new SubjectController();
 
     @FXML
-    private TextField idTxt;
-
-    @FXML
-    private TextField nameTxt;
+    private Label courseLabel;
 
     @FXML
     private TextField courseTxt;
 
     @FXML
+    private TableColumn<SubjectDto,String> course_id;
+
+    @FXML
+    private Button deleteBtn;
+
+    @FXML
     private TableView<SubjectDto> detailsTable;
+
+    @FXML
+    private Label idLabel;
+
+    @FXML
+    private TextField idTxt;
+
+    @FXML
+    private Label nameLabel;
+
+    @FXML
+    private TextField nameTxt;
+
+    @FXML
+    private Button resetBtn;
+
+    @FXML
+    private Button saveBtn;
 
     @FXML
     private TableColumn<SubjectDto, String> subject_id;
@@ -30,14 +51,15 @@ public class ManageSubjectsController {
     private TableColumn<SubjectDto, String> subject_name;
 
     @FXML
-    private TableColumn<SubjectDto, String> course_id;
+    private Button updateBtn;
 
     @FXML
     public void initialize() {
 
         subject_id.setCellValueFactory(new PropertyValueFactory<>("subjectId"));
-        course_id.setCellValueFactory(new PropertyValueFactory<>("courseId"));
         subject_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        course_id.setCellValueFactory(new PropertyValueFactory<>("courseId"));
+
         loadAllSubjects();
     }
 
