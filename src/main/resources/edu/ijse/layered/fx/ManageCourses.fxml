@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="612.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageCoursesController">
+<AnchorPane prefHeight="768.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageCoursesController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="22.0" prefHeight="47.0" prefWidth="956.0" text="Course Management System">
+      <Label contentDisplay="CENTER" layoutX="43.0" layoutY="22.0" prefHeight="47.0" prefWidth="913.0" text="Course Management System">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -51,10 +51,10 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <TableView fx:id="detailsTabel" layoutX="45.0" layoutY="202.0" prefHeight="382.0" prefWidth="859.0">
+      <TableView fx:id="detailsTabel" layoutX="45.0" layoutY="202.0" prefHeight="453.0" prefWidth="957.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="215.0" text="Course_ID" />
-          <TableColumn fx:id="colName" prefWidth="643.0" text="Course_Name" />
+          <TableColumn fx:id="colName" prefWidth="741.0" text="Course_Name" />
         </columns>
       </TableView>
    </children>

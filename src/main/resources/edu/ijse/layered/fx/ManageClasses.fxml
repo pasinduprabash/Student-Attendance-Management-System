@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="612.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageClassesController">
+<AnchorPane prefHeight="768.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageClassesController">
    <children>
-      <Label alignment="CENTER" layoutY="19.0" prefHeight="43.0" prefWidth="956.0" text="Manage Classes">
+      <Label layoutX="47.0" layoutY="19.0" prefHeight="43.0" prefWidth="909.0" text="Manage Classes">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -76,13 +76,13 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="detailsTabel" layoutX="42.0" layoutY="333.0" prefHeight="257.0" prefWidth="874.0">
+      <TableView fx:id="detailsTabel" layoutX="42.0" layoutY="333.0" prefHeight="356.0" prefWidth="965.0">
         <columns>
             <TableColumn fx:id="classId" prefWidth="186.0" text="class_id" />
             <TableColumn fx:id="courseId" prefWidth="186.0" text="course_id" />
             <TableColumn fx:id="subjectId" prefWidth="186.0" text="subject_id" />
             <TableColumn fx:id="lectureId" prefWidth="186.0" text="lecture_id" />
-           <TableColumn fx:id="date" prefWidth="128.0" text="date" />
+           <TableColumn fx:id="date" prefWidth="220.0" text="date" />
         </columns>
       </TableView>
       <Label fx:id="dateLabel" layoutX="48.0" layoutY="193.0" prefHeight="43.0" prefWidth="213.0" text="Date :">

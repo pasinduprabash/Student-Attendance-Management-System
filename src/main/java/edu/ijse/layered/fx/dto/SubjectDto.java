@@ -1,6 +1,5 @@
 package edu.ijse.layered.fx.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -3,77 +3,68 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="580.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.MainMenuController">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.MainMenuController">
     <children>
-        <VBox prefHeight="400.0" prefWidth="290.0">
-            <children>
-                <ImageView fitHeight="580.0" fitWidth="461.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@image.jpg" />
-                    </image>
-                </ImageView>
-            </children>
-        </VBox>
-        <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="447.0" layoutY="16.0" prefHeight="40.0" prefWidth="318.0" text="Main Menu">
+        <VBox prefHeight="400.0" prefWidth="290.0" />
+        <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="16.0" prefHeight="40.0" prefWidth="318.0" text="Main Menu">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Hyperlink fx:id="tradeMarkLabel" layoutX="472.0" layoutY="542.0" prefHeight="24.0" prefWidth="272.0" text="© 2025 Sample IT System. All rights reserved.">
+        <Hyperlink fx:id="tradeMarkLabel" layoutX="33.0" layoutY="551.0" prefHeight="24.0" prefWidth="272.0" text="© 2025 Sample IT System. All rights reserved.">
             <font>
                 <Font size="12.0" />
             </font>
         </Hyperlink>
-        <Button fx:id="studentsBtn" layoutX="490.0" layoutY="75.0" mnemonicParsing="false" onAction="#navigateStudents" prefHeight="34.0" prefWidth="233.0" text="Manage Students">
+        <Button fx:id="studentsBtn" layoutX="51.0" layoutY="75.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Manage Students">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="lecturesBtn" layoutX="490.0" layoutY="126.0" mnemonicParsing="false" onAction="#navigateLectures" prefHeight="34.0" prefWidth="233.0" text="Manage Lectures">
+        <Button fx:id="lecturesBtn" layoutX="51.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Manage Lectures">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="coursesBtn" layoutX="490.0" layoutY="231.0" mnemonicParsing="false" onAction="#navigateCourses" prefHeight="34.0" prefWidth="233.0" text="Manage Courses">
+        <Button fx:id="coursesBtn" layoutX="51.0" layoutY="231.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Manage Courses">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="classesBtn" layoutX="491.0" layoutY="284.0" mnemonicParsing="false" onAction="#navigateClasses" prefHeight="34.0" prefWidth="233.0" text="Manage Classes">
+        <Button fx:id="classesBtn" layoutX="52.0" layoutY="284.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Manage Classes">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="logOutBtn" layoutX="491.0" layoutY="490.0" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="233.0" text="Log Out">
+        <Button fx:id="logOutBtn" layoutX="52.0" layoutY="490.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Log Out">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="attendenceBtn" layoutX="491.0" layoutY="386.0" mnemonicParsing="false" onAction="#navigateAttendence" prefHeight="34.0" prefWidth="233.0" text="Manage Attendance">
+        <Button fx:id="attendenceBtn" layoutX="52.0" layoutY="386.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Manage Attendance">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="subjectsBtn" layoutX="491.0" layoutY="178.0" mnemonicParsing="false" onAction="#navigateSubjects" prefHeight="34.0" prefWidth="233.0" text="Manage Subjects">
+        <Button fx:id="subjectsBtn" layoutX="52.0" layoutY="178.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Manage Subjects">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="reportsBtn" layoutX="490.0" layoutY="437.0" mnemonicParsing="false" onAction="#navigateReports" prefHeight="34.0" prefWidth="233.0" text="View Reports">
+        <Button fx:id="reportsBtn" layoutX="51.0" layoutY="437.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="View Reports">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="enrollBtn" layoutX="491.0" layoutY="335.0" mnemonicParsing="false" onAction="#navigateEnroll" prefHeight="34.0" prefWidth="233.0" text="Manage Enroll">
+        <Button fx:id="enrollBtn" layoutX="52.0" layoutY="335.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" text="Manage Enroll">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
+      <AnchorPane fx:id="contentPane" layoutX="314.0" prefHeight="768.0" prefWidth="1052.0" />
     </children>
 </AnchorPane>

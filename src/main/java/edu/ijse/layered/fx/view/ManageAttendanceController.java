@@ -82,19 +82,6 @@ public class ManageAttendanceController {
     }
 
     @FXML
-    void navigateMainMenu(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/edu/ijse/layered/fx/MainMenu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Main Menu");
-        stage.setResizable(false);
-        stage.show();
-
-        ((Stage) menuBtn.getScene().getWindow()).close();
-    }
-
-    @FXML
     void navigateSave(ActionEvent event) {
         try {
             AttendanceDto attendanceDto = new AttendanceDto(

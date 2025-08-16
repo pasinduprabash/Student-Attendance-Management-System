@@ -15,10 +15,7 @@ public class ManageStudentsController {
     private TableColumn<StudentDto, String> colContact;
 
     @FXML
-    private TableColumn<StudentDto, String> colCourse;
-
-    @FXML
-    private TableColumn<StudentDto, Integer> colId;
+    private TableColumn<StudentDto, String> colId;
 
     @FXML
     private TableColumn<StudentDto, String> colName;
@@ -59,10 +56,9 @@ public class ManageStudentsController {
     @FXML
     public void initialize(){
 
-        colId.setCellValueFactory(new PropertyValueFactory<>("regNum"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("reg_num"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colCourse.setCellValueFactory(new PropertyValueFactory<>("course"));
-        colContact.setCellValueFactory(new PropertyValueFactory<>("contactDetails"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contact_address"));
         loadTable();
 
     }
@@ -92,7 +88,6 @@ public class ManageStudentsController {
         try {
             String rsp = studentsController.deleteStudent(idTxt.getText());
             clear(event);
-            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -114,8 +109,6 @@ public class ManageStudentsController {
             );
 
             String rsp = studentsController.addStudent(studentDto);
-            clear(event);
-            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -137,8 +130,6 @@ public class ManageStudentsController {
                             contactTxt.getText());
 
             String rsp = studentsController.updateStudents(studentDto);
-            clear(event);
-            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();

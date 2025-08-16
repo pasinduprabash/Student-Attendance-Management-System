@@ -3,97 +3,74 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="443.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageAttendanceController">
+<AnchorPane prefHeight="612.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageAttendanceController">
    <children>
-      <Label fx:id="titleLabel" alignment="CENTER" layoutX="440.0" layoutY="9.0" prefHeight="46.0" prefWidth="322.0" text="Attendance Management">
+      <!-- Title -->
+      <Label layoutX="38.0" layoutY="21.0" prefHeight="39.0" prefWidth="918.0" text="Attendance Management System">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Hyperlink fx:id="tradeMarkLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="437.0" layoutY="518.0" prefHeight="24.0" prefWidth="328.0" text="© 2025 Sample IT System. All rights reserved.">
-         <font>
-            <Font size="12.0" />
-         </font>
-      </Hyperlink>
-      <VBox layoutX="-2.0" prefHeight="570.0" prefWidth="414.0">
-         <children>
-            <ImageView fitHeight="570.0" fitWidth="446.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <Label fx:id="lectureLabel" layoutX="624.0" layoutY="75.0" prefHeight="30.0" prefWidth="123.0" text="Lecture ID :">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="studentLabel" layoutX="460.0" layoutY="156.0" prefHeight="30.0" prefWidth="156.0" text="Student Name :">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="lectureTxt" layoutX="621.0" layoutY="112.0" prefHeight="30.0" prefWidth="123.0" />
-      <Label fx:id="subjectLabel" layoutX="616.0" layoutY="234.0" prefHeight="30.0" prefWidth="130.0" text="Subject Name :">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="dateLabel" layoutX="458.0" layoutY="74.0" prefHeight="30.0" prefWidth="156.0" text="Date :">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <DatePicker fx:id="datePicker" layoutX="458.0" layoutY="112.0" prefHeight="30.0" prefWidth="150.0" />
-      <Label fx:id="statusLabel" layoutX="465.0" layoutY="324.0" prefHeight="30.0" prefWidth="140.0" text="Status :">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="statusPicker" layoutX="612.0" layoutY="323.0" prefHeight="30.0" prefWidth="130.0" />
-      <TextField fx:id="studentTxt" layoutX="458.0" layoutY="188.0" prefHeight="30.0" prefWidth="286.0" />
-      <TextField fx:id="subjectTxt" layoutX="614.0" layoutY="268.0" prefHeight="30.0" prefWidth="130.0" />
-      <Button fx:id="saveBtn" layoutX="461.0" layoutY="386.0" mnemonicParsing="false" onAction="#navigateSave" prefHeight="37.0" prefWidth="87.0" text="Save">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="menuBtn" layoutX="559.0" layoutY="446.0" mnemonicParsing="false" onAction="#navigateMainMenu" prefHeight="37.0" prefWidth="179.0" text="Main Menu">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Label fx:id="courseLabel" layoutX="461.0" layoutY="234.0" prefHeight="30.0" prefWidth="130.0" text="Course Name :">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="courseTxt" layoutX="462.0" layoutY="268.0" prefHeight="30.0" prefWidth="130.0" />
-      <Button fx:id="updateBtn" layoutX="558.0" layoutY="386.0" mnemonicParsing="false" onAction="#navigateUpdate" prefHeight="37.0" prefWidth="87.0" text="Update">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="deleteBtn" layoutX="652.0" layoutY="386.0" mnemonicParsing="false" onAction="#navigateDelete" prefHeight="37.0" prefWidth="87.0" text="Delete">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="clearBtn" layoutX="461.0" layoutY="446.0" mnemonicParsing="false" onAction="#Clear" prefHeight="37.0" prefWidth="87.0" text="Clear">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-   </children>
 
+      <!-- Buttons -->
+      <Button fx:id="saveBtn" layoutX="286.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateSave" prefHeight="29.0" prefWidth="89.0" text="Save">
+         <font><Font name="System Bold" size="14.0" /></font>
+      </Button>
+      <Button fx:id="updateBtn" layoutX="414.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateUpdate" prefHeight="29.0" prefWidth="89.0" text="Update">
+         <font><Font name="System Bold" size="14.0" /></font>
+      </Button>
+      <Button fx:id="deleteBtn" layoutX="534.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateDelete" prefHeight="29.0" prefWidth="89.0" text="Delete">
+         <font><Font name="System Bold" size="14.0" /></font>
+      </Button>
+      <Button fx:id="resetBtn" layoutX="650.0" layoutY="265.0" mnemonicParsing="false" onAction="#Clear" prefHeight="29.0" prefWidth="89.0" text="Reset">
+         <font><Font name="System Bold" size="14.0" /></font>
+      </Button>
+
+      <!-- Labels -->
+      <Label layoutX="41.0" layoutY="87.0" prefHeight="30.0" prefWidth="128.0" text="Date :">
+         <font><Font size="15.0" /></font>
+      </Label>
+      <Label layoutX="538.0" layoutY="88.0" prefHeight="30.0" prefWidth="128.0" text="Lecture ID :">
+         <font><Font size="15.0" /></font>
+      </Label>
+      <Label layoutX="41.0" layoutY="141.0" prefHeight="30.0" prefWidth="128.0" text="Student Name :">
+         <font><Font size="15.0" /></font>
+      </Label>
+      <Label layoutX="537.0" layoutY="141.0" prefHeight="30.0" prefWidth="128.0" text="Course Name :">
+         <font><Font size="15.0" /></font>
+      </Label>
+      <Label layoutX="41.0" layoutY="195.0" prefHeight="30.0" prefWidth="128.0" text="Subject Name :">
+         <font><Font size="15.0" /></font>
+      </Label>
+      <Label layoutX="538.0" layoutY="195.0" prefHeight="30.0" prefWidth="128.0" text="Status :">
+         <font><Font size="15.0" /></font>
+      </Label>
+
+      <!-- Inputs -->
+      <DatePicker fx:id="datePicker" layoutX="239.0" layoutY="88.0" prefHeight="30.0" prefWidth="221.0" />
+      <TextField fx:id="lectureTxt" layoutX="666.0" layoutY="88.0" prefHeight="30.0" prefWidth="221.0" />
+      <TextField fx:id="studentTxt" layoutX="239.0" layoutY="141.0" prefHeight="30.0" prefWidth="221.0" />
+      <TextField fx:id="courseTxt" layoutX="666.0" layoutY="141.0" prefHeight="30.0" prefWidth="221.0" />
+      <TextField fx:id="subjectTxt" layoutX="239.0" layoutY="195.0" prefHeight="30.0" prefWidth="221.0" />
+      <ComboBox fx:id="statusPicker" layoutX="666.0" layoutY="195.0" prefHeight="30.0" prefWidth="221.0" />
+
+      <!-- Table -->
+      <TableView fx:id="detailsTable" layoutX="45.0" layoutY="334.0" prefHeight="257.0" prefWidth="966.0">
+         <columns>
+            <TableColumn fx:id="colDate" prefWidth="150.0" text="Date" />
+            <TableColumn fx:id="colLectureId" prefWidth="150.0" text="Lecture_id" />
+            <TableColumn fx:id="colStudentName" prefWidth="200.0" text="Student_name" />
+            <TableColumn fx:id="colCourseName" prefWidth="200.0" text="Course_name" />
+            <TableColumn fx:id="colSubjectName" prefWidth="146.0" text="Subject_name" />
+            <TableColumn fx:id="colStatus" prefWidth="139.0" text="Status" />
+         </columns>
+      </TableView>
+   </children>
 </AnchorPane>
