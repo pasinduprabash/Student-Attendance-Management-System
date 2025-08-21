@@ -13,56 +13,56 @@
 <AnchorPane prefHeight="612.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageAttendanceController">
    <children>
       <!-- Title -->
-      <Label layoutX="38.0" layoutY="21.0" prefHeight="39.0" prefWidth="918.0" text="Attendance Management System">
+      <Label fx:id="titleLabel" layoutX="38.0" layoutY="21.0" prefHeight="39.0" prefWidth="918.0" text="Attendance Management System">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
 
       <!-- Buttons -->
-      <Button fx:id="saveBtn" layoutX="286.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateSave" prefHeight="29.0" prefWidth="89.0" text="Save">
+      <Button fx:id="saveBtn" layoutX="286.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateSave" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Save">
          <font><Font name="System Bold" size="14.0" /></font>
       </Button>
-      <Button fx:id="updateBtn" layoutX="414.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateUpdate" prefHeight="29.0" prefWidth="89.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="414.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateUpdate" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Update">
          <font><Font name="System Bold" size="14.0" /></font>
       </Button>
-      <Button fx:id="deleteBtn" layoutX="534.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateDelete" prefHeight="29.0" prefWidth="89.0" text="Delete">
+      <Button fx:id="deleteBtn" layoutX="534.0" layoutY="265.0" mnemonicParsing="false" onAction="#navigateDelete" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Delete">
          <font><Font name="System Bold" size="14.0" /></font>
       </Button>
-      <Button fx:id="resetBtn" layoutX="650.0" layoutY="265.0" mnemonicParsing="false" onAction="#Clear" prefHeight="29.0" prefWidth="89.0" text="Reset">
+      <Button fx:id="resetBtn" layoutX="650.0" layoutY="265.0" mnemonicParsing="false" onAction="#Clear" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Reset">
          <font><Font name="System Bold" size="14.0" /></font>
       </Button>
 
       <!-- Labels -->
-      <Label layoutX="41.0" layoutY="87.0" prefHeight="30.0" prefWidth="128.0" text="Date :">
+      <Label layoutX="41.0" layoutY="87.0" prefHeight="30.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Date :">
          <font><Font size="15.0" /></font>
       </Label>
-      <Label layoutX="538.0" layoutY="88.0" prefHeight="30.0" prefWidth="128.0" text="Lecture ID :">
+      <Label layoutX="538.0" layoutY="88.0" prefHeight="30.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Lecture ID :">
          <font><Font size="15.0" /></font>
       </Label>
-      <Label layoutX="41.0" layoutY="141.0" prefHeight="30.0" prefWidth="128.0" text="Student Name :">
+      <Label layoutX="41.0" layoutY="141.0" prefHeight="30.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Student Name :">
          <font><Font size="15.0" /></font>
       </Label>
-      <Label layoutX="537.0" layoutY="141.0" prefHeight="30.0" prefWidth="128.0" text="Course Name :">
+      <Label layoutX="537.0" layoutY="141.0" prefHeight="30.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Course Name :">
          <font><Font size="15.0" /></font>
       </Label>
-      <Label layoutX="41.0" layoutY="195.0" prefHeight="30.0" prefWidth="128.0" text="Subject Name :">
+      <Label layoutX="41.0" layoutY="195.0" prefHeight="30.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Subject Name :">
          <font><Font size="15.0" /></font>
       </Label>
-      <Label layoutX="538.0" layoutY="195.0" prefHeight="30.0" prefWidth="128.0" text="Status :">
+      <Label layoutX="538.0" layoutY="195.0" prefHeight="30.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Status :">
          <font><Font size="15.0" /></font>
       </Label>
 
       <!-- Inputs -->
-      <DatePicker fx:id="datePicker" layoutX="239.0" layoutY="88.0" prefHeight="30.0" prefWidth="221.0" />
-      <TextField fx:id="lectureTxt" layoutX="666.0" layoutY="88.0" prefHeight="30.0" prefWidth="221.0" />
-      <TextField fx:id="studentTxt" layoutX="239.0" layoutY="141.0" prefHeight="30.0" prefWidth="221.0" />
-      <TextField fx:id="courseTxt" layoutX="666.0" layoutY="141.0" prefHeight="30.0" prefWidth="221.0" />
-      <TextField fx:id="subjectTxt" layoutX="239.0" layoutY="195.0" prefHeight="30.0" prefWidth="221.0" />
-      <ComboBox fx:id="statusPicker" layoutX="666.0" layoutY="195.0" prefHeight="30.0" prefWidth="221.0" />
+      <DatePicker fx:id="datePicker" layoutX="239.0" layoutY="88.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css" />
+      <TextField fx:id="lectureTxt" layoutX="666.0" layoutY="88.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css" />
+      <TextField fx:id="studentTxt" layoutX="239.0" layoutY="141.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css" />
+      <TextField fx:id="courseTxt" layoutX="666.0" layoutY="141.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css" />
+      <TextField fx:id="subjectTxt" layoutX="239.0" layoutY="195.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css" />
+      <ComboBox fx:id="statusPicker" layoutX="666.0" layoutY="195.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css" />
 
       <!-- Table -->
-      <TableView fx:id="detailsTable" layoutX="45.0" layoutY="334.0" prefHeight="257.0" prefWidth="966.0">
+      <TableView fx:id="detailsTable" layoutX="45.0" layoutY="334.0" prefHeight="257.0" prefWidth="966.0" stylesheets="@css/style2.css">
          <columns>
             <TableColumn fx:id="colDate" prefWidth="150.0" text="Date" />
             <TableColumn fx:id="colLectureId" prefWidth="150.0" text="Lecture_id" />

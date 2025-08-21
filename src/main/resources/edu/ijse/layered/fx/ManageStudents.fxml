@@ -10,51 +10,51 @@
 
 <AnchorPane prefHeight="612.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageStudentsController">
    <children>
-      <Label layoutX="38.0" layoutY="21.0" prefHeight="39.0" prefWidth="918.0" text="Student Management System">
+      <Label fx:id="titleLabel" layoutX="38.0" layoutY="21.0" prefHeight="39.0" prefWidth="918.0" text="Student Management System">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="saveBtn" layoutX="508.0" layoutY="104.0" mnemonicParsing="false" onAction="#saveStudents" prefHeight="29.0" prefWidth="89.0" text="Save">
+      <Button fx:id="saveBtn" layoutX="508.0" layoutY="104.0" mnemonicParsing="false" onAction="#saveStudents" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Save">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="updateBtn" layoutX="508.0" layoutY="145.0" mnemonicParsing="false" onAction="#updateStudents" prefHeight="29.0" prefWidth="89.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="508.0" layoutY="145.0" mnemonicParsing="false" onAction="#updateStudents" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Update">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="deleteBtn" layoutX="508.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteStudents" prefHeight="29.0" prefWidth="89.0" text="Delete">
+      <Button fx:id="deleteBtn" layoutX="508.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteStudents" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Delete">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="resetBtn" layoutX="618.0" layoutY="188.0" mnemonicParsing="false" onAction="#clear" prefHeight="29.0" prefWidth="89.0" text="Reset">
+      <Button fx:id="resetBtn" layoutX="618.0" layoutY="188.0" mnemonicParsing="false" onAction="#clear" prefHeight="29.0" prefWidth="89.0" stylesheets="@css/style2.css" text="Reset">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label fx:id="idLabel" layoutX="41.0" layoutY="100.0" prefHeight="39.0" prefWidth="128.0" text="Student ID : ">
+      <Label fx:id="idLabel" layoutX="41.0" layoutY="100.0" prefHeight="39.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Student ID : ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="nameLabel" layoutX="41.0" layoutY="141.0" prefHeight="39.0" prefWidth="128.0" text="Student Name : ">
+      <Label fx:id="nameLabel" layoutX="41.0" layoutY="141.0" prefHeight="39.0" prefWidth="128.0" stylesheets="@css/style2.css" text="Student Name : ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="contactLabel" layoutX="41.0" layoutY="185.0" prefHeight="39.0" prefWidth="198.0" text="Student Contact Number : ">
+      <Label fx:id="contactLabel" layoutX="41.0" layoutY="185.0" prefHeight="39.0" prefWidth="198.0" stylesheets="@css/style2.css" text="Student Contact Number : ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="idTxt" layoutX="239.0" layoutY="102.0" prefHeight="30.0" prefWidth="221.0">
+      <TextField fx:id="idTxt" layoutX="239.0" layoutY="102.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css">
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <TextField fx:id="nameTxt" layoutX="239.0" layoutY="146.0" prefHeight="30.0" prefWidth="221.0">
+      <TextField fx:id="nameTxt" layoutX="239.0" layoutY="146.0" prefHeight="30.0" prefWidth="221.0" stylesheets="@css/style2.css">
          <font>
             <Font size="15.0" />
          </font></TextField>
@@ -62,7 +62,7 @@
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <TableView fx:id="detailsTabel" layoutX="41.0" layoutY="255.0" prefHeight="331.0" prefWidth="967.0">
+      <TableView fx:id="detailsTabel" layoutX="41.0" layoutY="255.0" prefHeight="331.0" prefWidth="967.0" stylesheets="@css/style2.css">
         <columns>
           <TableColumn fx:id="colId" prefWidth="171.0" text="Student_id" />
           <TableColumn fx:id="colName" prefWidth="447.0" text="Student_name" />

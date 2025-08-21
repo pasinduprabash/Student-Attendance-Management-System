@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.fx.view.ManageAttendaceReportController">
    <children>
-      <Button layoutX="37.0" layoutY="38.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="260.0" text="Attendance Reports">
+      <Button layoutX="37.0" layoutY="38.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="260.0" stylesheets="@css/style.css" text="Attendance Reports">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
