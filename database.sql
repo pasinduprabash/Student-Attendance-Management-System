@@ -1,3 +1,5 @@
+CREATE DATABASE IJSE;
+
 -- Table: course
 CREATE TABLE course (
     course_id VARCHAR(25) NOT NULL PRIMARY KEY,
