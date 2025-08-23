@@ -71,3 +71,7 @@ CREATE TABLE user (
     password  VARCHAR(25) NULL,
     role      VARCHAR(25) NULL
 );
+
+INSERT INTO user VALUES 
+(1, 'Admin', '123', 'Admin'),
+(2, 'Lecture', '123', 'Lecture');
