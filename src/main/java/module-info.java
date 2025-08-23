@@ -3,6 +3,7 @@ module edu.ijse.layered.fx {
     requires javafx.fxml;
     requires static lombok;
     requires java.sql;
+    requires jbcrypt;
 
     opens edu.ijse.layered.fx.view to javafx.fxml;
     opens edu.ijse.layered.fx.dto to javafx.base;

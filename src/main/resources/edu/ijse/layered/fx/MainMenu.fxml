@@ -40,7 +40,7 @@
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="logOutBtn" layoutX="52.0" layoutY="490.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="233.0" stylesheets="@css/style.css" text="Log Out">
+        <Button fx:id="logOutBtn" layoutX="52.0" layoutY="490.0" mnemonicParsing="false" onAction="#navigateLogOut" prefHeight="34.0" prefWidth="233.0" stylesheets="@css/style.css" text="Log Out">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>

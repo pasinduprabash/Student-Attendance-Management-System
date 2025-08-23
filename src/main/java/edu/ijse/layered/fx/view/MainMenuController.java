@@ -60,7 +60,6 @@ public class MainMenuController {
         enrollBtn.setOnAction(e -> loadUI("ManageEnrollment"));
         attendenceBtn.setOnAction(e -> loadUI("ManageAttendance"));
         reportsBtn.setOnAction(e -> loadUI("ManageAttendanceReport"));
-        logOutBtn.setOnAction(e -> loadUI("ManageLogin"));
     }
 
     private void loadUI(String fxmlName) {
@@ -76,4 +75,10 @@ public class MainMenuController {
         }
     }
 
+
+    public void navigateLogOut(ActionEvent event) {
+
+        
+
+    }
 }

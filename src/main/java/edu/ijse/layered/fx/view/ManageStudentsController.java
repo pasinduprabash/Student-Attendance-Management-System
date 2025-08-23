@@ -56,9 +56,9 @@ public class ManageStudentsController {
     @FXML
     public void initialize(){
 
-        colId.setCellValueFactory(new PropertyValueFactory<>("reg_num"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("regNum"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colContact.setCellValueFactory(new PropertyValueFactory<>("contact_address"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contactDetails"));
         loadTable();
 
     }
