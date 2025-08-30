@@ -88,6 +88,7 @@ public class ManageStudentsController {
         try {
             String rsp = studentsController.deleteStudent(idTxt.getText());
             clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -109,6 +110,8 @@ public class ManageStudentsController {
             );
 
             String rsp = studentsController.addStudent(studentDto);
+            clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
@@ -130,6 +133,8 @@ public class ManageStudentsController {
                             contactTxt.getText());
 
             String rsp = studentsController.updateStudents(studentDto);
+            clear(event);
+            loadTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(rsp);
             alert.showAndWait();
